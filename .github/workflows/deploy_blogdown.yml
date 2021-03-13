@@ -44,7 +44,7 @@ jobs:
          # Destination path
          path: public # optional
      - name: Deploy to GitHub Pages
-       uses: Cecilapp/GitHub-Pages-deploy@master
+       uses: Cecilapp/GitHub-Pages-deploy@3.0.0
        env:
           EMAIL: ${{ secrets.EMAIL }}               # must be a verified email
           GH_TOKEN: ${{ secrets.BLOGDOWN }} # https://github.com/settings/tokens
