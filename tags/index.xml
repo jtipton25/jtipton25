@@ -1,97 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Academia</title>
-    <link>jtipton25/tags/</link>
-    <description>Recent content in Tags on Academia</description>
-    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <copyright>Copyright &amp;copy; {year}</copyright>
-    <lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate>
-    
-	    <atom:link href="jtipton25/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>plot</title>
-      <link>jtipton25/tags/plot/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
-      
-      <guid>jtipton25/tags/plot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R Markdown</title>
-      <link>jtipton25/tags/r-markdown/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
-      
-      <guid>jtipton25/tags/r-markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>regression</title>
-      <link>jtipton25/tags/regression/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
-      
-      <guid>jtipton25/tags/regression/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Source Themes</title>
-      <link>jtipton25/tags/source-themes/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>jtipton25/tags/source-themes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deep Learning</title>
-      <link>jtipton25/tags/deep-learning/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>jtipton25/tags/deep-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Demo</title>
-      <link>jtipton25/tags/demo/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>jtipton25/tags/demo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>human</title>
-      <link>jtipton25/tags/human/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>jtipton25/tags/human/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>robotics</title>
-      <link>jtipton25/tags/robotics/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>jtipton25/tags/robotics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>academia</title>
-      <link>jtipton25/tags/academia/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>jtipton25/tags/academia/</guid>
-      <description></description>
-    </item>
+    <title>Tags | John Tipton&#39;s Research Site</title>
+    <link>/tags/</link>
+      <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tags</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>Tags</title>
+      <link>/tags/</link>
+    </image>
     
   </channel>
 </rss>

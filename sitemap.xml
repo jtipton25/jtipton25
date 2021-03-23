@@ -2,169 +2,135 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>jtipton25/courses/example/example1/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+    <loc>/courses/example/python/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/courses/example.1/example3/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+    <loc>/courses/example/visualization/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/courses/example.2/example3/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+    <loc>/courses/example/stats/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/courses/example.1/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/courses/example.2/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/courses/example/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/courses/example.2/example4/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url><url>
-    <loc>jtipton25/courses/example/example2/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url><url>
-    <loc>jtipton25/courses/example.1/example4/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url><url>
-    <loc>jtipton25/</loc>
+    <loc>/talk/example-talk/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/talk/coding/</loc>
+    <loc>/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/talk/qualitative/</loc>
+    <loc>/event/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/talk/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <loc>/courses/</loc>
+    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/talk/synthesizing/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <loc>/courses/example/</loc>
+    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/categories/</loc>
+    <loc>/tag/academic/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/category/demo/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/author/john-tipton/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/getting-started/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/author/%E5%90%B3%E6%81%A9%E9%81%94/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tag/%E5%BC%80%E6%BA%90/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/category/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/2020-12-01-r-rmarkdown/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>jtipton25/post/2020-12-01-r-rmarkdown/</loc>
+    <loc>/tag/plot/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>jtipton25/tags/plot/</loc>
+    <loc>/category/r/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>jtipton25/post/</loc>
+    <loc>/tag/r-markdown/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>jtipton25/categories/r/</loc>
+    <loc>/tag/regression/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>jtipton25/tags/r-markdown/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
+    <loc>/post/writing-technical-content/</loc>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/tags/regression/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/tags/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/courses/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url><url>
-    <loc>jtipton25/authors/admin/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/publication_types/3/</loc>
+    <loc>/publication-type/3/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/publication/preprint/</loc>
+    <loc>/publication/preprint/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/authors/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/publication_types/</loc>
+    <loc>/publication_types/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/publication/</loc>
+    <loc>/publication/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/tags/source-themes/</loc>
+    <loc>/tag/source-themes/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/post/jupyter/</loc>
+    <loc>/post/jupyter/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/slides/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/slides/</loc>
+    <loc>/slides/example/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/slides/example/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/post/2016-12-30-hello-markdown/</loc>
-    <lastmod>2016-12-30T21:49:57-07:00</lastmod>
-  </url><url>
-    <loc>jtipton25/about/</loc>
-    <lastmod>2016-05-05T21:48:51-07:00</lastmod>
-  </url><url>
-    <loc>jtipton25/project/artificial-intelligence/</loc>
+    <loc>/tag/deep-learning/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/tags/deep-learning/</loc>
+    <loc>/tag/demo/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/project/deep-learning/</loc>
+    <loc>/project/external-project/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/tags/demo/</loc>
+    <loc>/project/internal-project/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/project/external-project/</loc>
+    <loc>/project/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/tags/human/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/project/internal-project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/project/robotics/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/tags/robotics/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/project/skin-cancer-ai/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/post/snail/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/tags/academia/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/post/getting-started/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/publication_types/2/</loc>
+    <loc>/publication-type/2/</loc>
     <lastmod>2015-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/publication/journal-article/</loc>
+    <loc>/publication/journal-article/</loc>
     <lastmod>2015-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/authors/robert-ford/</loc>
+    <loc>/author/robert-ford/</loc>
     <lastmod>2015-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/post/2015-01-01-lorem-ipsum/</loc>
-    <lastmod>2015-01-01T13:09:13-06:00</lastmod>
-  </url><url>
-    <loc>jtipton25/publication_types/1/</loc>
+    <loc>/publication-type/1/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/publication/conference-paper/</loc>
+    <loc>/publication/conference-paper/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/admin/</loc>
   </url>
 </urlset>
