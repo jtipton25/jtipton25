@@ -3,7 +3,7 @@
 
 title: "Predicting paleoclimate from compositional data using multivariate Gaussian process inverse prediction"
 authors: [Tipton, J.R., Mevin B. Hooten; Connor Nolan; Robert K. Booth; Jason McLachlan]
-date: 2021-03-23T22:41:07-05:00
+date: 2019-03-23T22:41:07-05:00
 doi: "10.1214/19-AOAS1281"
 
 # Schedule page publish date (NOT publication's date).
@@ -47,7 +47,7 @@ summary: ""
 
 tags: []
 categories: []
-featured: false
+featured: true
 
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
