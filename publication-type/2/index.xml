@@ -5,7 +5,7 @@
     <link>jtipton25/publication-type/2/</link>
       <atom:link href="jtipton25/publication-type/2/index.xml" rel="self" type="application/rss+xml" />
     <description>2</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 23 Mar 2021 22:41:07 -0500</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 23 Nov 2020 22:41:07 -0500</lastBuildDate>
     <image>
       <url>/jtipton25/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
       <title>2</title>
@@ -13,30 +13,19 @@
     </image>
     
     <item>
-      <title>Predicting paleoclimate from compositional data using multivariate Gaussian process inverse prediction</title>
-      <link>jtipton25/publication/aoas2019/</link>
-      <pubDate>Tue, 23 Mar 2021 22:41:07 -0500</pubDate>
-      <guid>jtipton25/publication/aoas2019/</guid>
+      <title>Pollen-based climate reconstruction techniques for late Quaternary studies</title>
+      <link>jtipton25/publication/2020earthscience/</link>
+      <pubDate>Mon, 23 Nov 2020 22:41:07 -0500</pubDate>
+      <guid>jtipton25/publication/2020earthscience/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>An example journal article</title>
-      <link>jtipton25/publication/journal-article/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>jtipton25/publication/journal-article/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <title>Predicting paleoclimate from compositional data using multivariate Gaussian process inverse prediction</title>
+      <link>jtipton25/publication/2019aoas/</link>
+      <pubDate>Sat, 23 Mar 2019 22:41:07 -0500</pubDate>
+      <guid>jtipton25/publication/2019aoas/</guid>
+      <description></description>
     </item>
     
   </channel>

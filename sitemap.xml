@@ -20,16 +20,16 @@
     <loc>jtipton25/event/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/publication-type/2/</loc>
+    <loc>jtipton25/publication-type/3/</loc>
     <lastmod>2021-03-23T22:41:07-05:00</lastmod>
   </url><url>
     <loc>jtipton25/authors/</loc>
     <lastmod>2021-03-23T22:41:07-05:00</lastmod>
   </url><url>
-    <loc>jtipton25/author/mevin-b.-hooten-connor-nolan-robert-k.-booth-jason-mclachlan/</loc>
+    <loc>jtipton25/publication/2021mathgeo/</loc>
     <lastmod>2021-03-23T22:41:07-05:00</lastmod>
   </url><url>
-    <loc>jtipton25/publication/aoas2019/</loc>
+    <loc>jtipton25/author/glenn-sharman-sam-johnstone/</loc>
     <lastmod>2021-03-23T22:41:07-05:00</lastmod>
   </url><url>
     <loc>jtipton25/publication_types/</loc>
@@ -92,17 +92,20 @@
     <loc>jtipton25/tag/regression/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
+    <loc>jtipton25/publication-type/2/</loc>
+    <lastmod>2020-11-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/publication/2020earthscience/</loc>
+    <lastmod>2020-11-23T22:41:07-05:00</lastmod>
+  </url><url>
     <loc>jtipton25/post/writing-technical-content/</loc>
     <lastmod>2019-07-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/publication-type/3/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+    <loc>jtipton25/author/mevin-b.-hooten-connor-nolan-robert-k.-booth-jason-mclachlan/</loc>
+    <lastmod>2019-03-23T22:41:07-05:00</lastmod>
   </url><url>
-    <loc>jtipton25/publication/preprint/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/tag/source-themes/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+    <loc>jtipton25/publication/2019aoas/</loc>
+    <lastmod>2019-03-23T22:41:07-05:00</lastmod>
   </url><url>
     <loc>jtipton25/post/jupyter/</loc>
     <lastmod>2019-09-05T00:00:00+00:00</lastmod>
@@ -128,20 +131,10 @@
     <loc>jtipton25/project/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/publication/journal-article/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/author/robert-ford/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/publication-type/1/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/publication/conference-paper/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>jtipton25/admin/</loc>
   </url><url>
     <loc>jtipton25/author/j.r./</loc>
+  </url><url>
+    <loc>jtipton25/author/manuel-chevalier-et.-al./</loc>
   </url>
 </urlset>

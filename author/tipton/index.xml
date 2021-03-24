@@ -13,10 +13,18 @@
     </image>
     
     <item>
-      <title>Predicting paleoclimate from compositional data using multivariate Gaussian process inverse prediction</title>
-      <link>jtipton25/publication/aoas2019/</link>
+      <title>Estimation of Sediment Mixing Distributions with Uncertainty Quantification using Bayesian Nonparametric Modeling</title>
+      <link>jtipton25/publication/2021mathgeo/</link>
       <pubDate>Tue, 23 Mar 2021 22:41:07 -0500</pubDate>
-      <guid>jtipton25/publication/aoas2019/</guid>
+      <guid>jtipton25/publication/2021mathgeo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Predicting paleoclimate from compositional data using multivariate Gaussian process inverse prediction</title>
+      <link>jtipton25/publication/2019aoas/</link>
+      <pubDate>Sat, 23 Mar 2019 22:41:07 -0500</pubDate>
+      <guid>jtipton25/publication/2019aoas/</guid>
       <description></description>
     </item>
     
