@@ -5,18 +5,18 @@ education:
   - course: PhD in Statistics
     institution: Colorado State University
     year: 2016
-  - course: MS in Statistics
-    institution: Colorado State University 
-    year: 2011
-  # - course: BSc in Artificial Intelligence
-  #   institution: Massachusetts Institute of Technology
-  #   year: 2008
+  # - course: MS in Statistics
+  #   institution: Colorado State University 
+  #   year: 2011
+  # - course: BS in Mathematics and Zoology
+  #   institution: Colorado State University
+  #   year: 2005
 email: ""
 highlight_name: false
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Applied Statistics
+- Bayesian Computation
+- Spatio-temporal Statistics
 organizations:
 - name: University of Arkansas
   url: https://www.uark.edu/
@@ -44,7 +44,9 @@ superuser: true
 title: John Tipton
 ---
 
-John Tipton is an assitant professor of Statistics in the Mathematical Sciences Department at the University of Arkansas. His research interests include applied statistical modeling, Bayesian computation, spatio-temporal statistical methods, climate and ecology, and data science. He is doing what he can and making things up along the way.
+John Tipton is an assistant professor of Statistics in the Mathematical Sciences Department at the University of Arkansas. His research interests include applied statistical modeling, Bayesian computation, spatio-temporal statistical methods, climate and ecology, and data science. 
+
+He is doing what he can and making things up along the way.
 
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "https://drive.google.com/file/d/1FKNdKrmOoza0H4lsRmCwa3pL_oLYFSGR/view?usp=sharing" "newtab" >}}CV{{< /staticref >}}.

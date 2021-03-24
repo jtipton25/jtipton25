@@ -142,10 +142,6 @@ search:
     api_key: ''
     index_name: ''
     show_logo: false
-map:
-  provider: mapnik
-  api_key: ''
-  zoom: 15
 marketing:
   google_analytics: ''
   google_tag_manager: ''
