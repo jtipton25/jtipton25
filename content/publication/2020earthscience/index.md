@@ -2,7 +2,7 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: "Pollen-based climate reconstruction techniques for late Quaternary studies"
-authors: [Manuel Chevalier et. al.]
+authors: [Manuel Chevalier et. al]
 date: 2020-11-23T22:41:07-05:00
 doi: "https://doi.org/10.1016/j.earscirev.2020.103384"
 
