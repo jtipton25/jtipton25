@@ -298,7 +298,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-947856231&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-593746128&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -308,7 +308,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-947856231&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-593746128&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -535,6 +535,14 @@ You found me!
     </item>
     
     <item>
+      <title>Comparing and improving methods for reconstructing peatland water-table depth from testate amoebae</title>
+      <link>jtipton25/publication/2019holocene/</link>
+      <pubDate>Thu, 09 May 2019 22:41:07 -0500</pubDate>
+      <guid>jtipton25/publication/2019holocene/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Predicting paleoclimate from compositional data using multivariate Gaussian process inverse prediction</title>
       <link>jtipton25/publication/2019aoas/</link>
       <pubDate>Sat, 23 Mar 2019 22:41:07 -0500</pubDate>
@@ -713,6 +721,14 @@ Three
 &lt;p&gt;&lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/discussions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Past and future global transformation of terrestrial ecosystems under climate change</title>
+      <link>jtipton25/publication/2018science/</link>
+      <pubDate>Fri, 31 Aug 2018 22:41:07 -0500</pubDate>
+      <guid>jtipton25/publication/2018science/</guid>
+      <description></description>
     </item>
     
     <item>
