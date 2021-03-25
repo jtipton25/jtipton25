@@ -90,6 +90,14 @@
     </item>
     
     <item>
+      <title>Predicting paleoclimate from compositional data using multivariate Gaussian process inverse prediction</title>
+      <link>jtipton25/publication/2019aoas/</link>
+      <pubDate>Sat, 23 Mar 2019 22:41:07 -0500</pubDate>
+      <guid>jtipton25/publication/2019aoas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Display Jupyter Notebooks with Academic</title>
       <link>jtipton25/post/jupyter/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
@@ -131,6 +139,30 @@ date: 2019-09-01
 &lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
 &lt;p&gt;This post was created with Jupyter. The orginal files can be found at &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&#34;&gt;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&lt;/a&gt;&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Past and future global transformation of terrestrial ecosystems under climate change</title>
+      <link>jtipton25/publication/2018science/</link>
+      <pubDate>Fri, 31 Aug 2018 22:41:07 -0500</pubDate>
+      <guid>jtipton25/publication/2018science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Studying interregional wildland fire engine assignments for large fire suppression</title>
+      <link>jtipton25/publication/2017wildlandfire/</link>
+      <pubDate>Fri, 19 May 2017 22:41:07 -0500</pubDate>
+      <guid>jtipton25/publication/2017wildlandfire/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reconstruction of spatio-temporal temperature from sparse historical records using robust probabilistic principal component regression</title>
+      <link>jtipton25/publication/2017ascmo/</link>
+      <pubDate>Fri, 27 Jan 2017 22:41:07 -0500</pubDate>
+      <guid>jtipton25/publication/2017ascmo/</guid>
+      <description></description>
     </item>
     
   </channel>

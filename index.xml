@@ -128,14 +128,6 @@ The variance of the distribution is $\sigma^{2}$.
     </item>
     
     <item>
-      <title>Estimation of Sediment Mixing Distributions with Uncertainty Quantification using Bayesian Nonparametric Modeling</title>
-      <link>jtipton25/publication/2021mathgeo/</link>
-      <pubDate>Tue, 23 Mar 2021 22:41:07 -0500</pubDate>
-      <guid>jtipton25/publication/2021mathgeo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Welcome to Wowchemy, the website builder for Hugo</title>
       <link>jtipton25/post/getting-started/</link>
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
@@ -298,7 +290,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-593746128&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-394562187&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -308,7 +300,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-593746128&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-394562187&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -728,6 +720,22 @@ Three
       <link>jtipton25/publication/2018science/</link>
       <pubDate>Fri, 31 Aug 2018 22:41:07 -0500</pubDate>
       <guid>jtipton25/publication/2018science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Studying interregional wildland fire engine assignments for large fire suppression</title>
+      <link>jtipton25/publication/2017wildlandfire/</link>
+      <pubDate>Fri, 19 May 2017 22:41:07 -0500</pubDate>
+      <guid>jtipton25/publication/2017wildlandfire/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reconstruction of spatio-temporal temperature from sparse historical records using robust probabilistic principal component regression</title>
+      <link>jtipton25/publication/2017ascmo/</link>
+      <pubDate>Fri, 27 Jan 2017 22:41:07 -0500</pubDate>
+      <guid>jtipton25/publication/2017ascmo/</guid>
       <description></description>
     </item>
     

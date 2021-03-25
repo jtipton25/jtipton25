@@ -20,27 +20,6 @@
     <loc>jtipton25/event/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/publication-type/3/</loc>
-    <lastmod>2021-03-23T22:41:07-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/authors/</loc>
-    <lastmod>2021-03-23T22:41:07-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/publication/2021mathgeo/</loc>
-    <lastmod>2021-03-23T22:41:07-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/author/glenn-sharman-sam-johnstone/</loc>
-    <lastmod>2021-03-23T22:41:07-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/publication_types/</loc>
-    <lastmod>2021-03-23T22:41:07-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/publication/</loc>
-    <lastmod>2021-03-23T22:41:07-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/author/tipton/</loc>
-    <lastmod>2021-03-23T22:41:07-05:00</lastmod>
-  </url><url>
     <loc>jtipton25/courses/</loc>
     <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url><url>
@@ -48,6 +27,9 @@
     <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>jtipton25/tag/academic/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>jtipton25/authors/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>jtipton25/categories/</loc>
@@ -101,22 +83,37 @@
     <loc>jtipton25/publication/2020earthscience/</loc>
     <lastmod>2020-11-23T22:41:07-05:00</lastmod>
   </url><url>
+    <loc>jtipton25/publication_types/</loc>
+    <lastmod>2020-11-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/publication/</loc>
+    <lastmod>2020-11-23T22:41:07-05:00</lastmod>
+  </url><url>
     <loc>jtipton25/post/writing-technical-content/</loc>
     <lastmod>2019-07-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>jtipton25/publication/2019holocene/</loc>
     <lastmod>2019-05-09T22:41:07-05:00</lastmod>
   </url><url>
-    <loc>jtipton25/author/j.r.-robert-k.-booth-mevin-b.-hooten-stephen-t.-jackson/</loc>
+    <loc>jtipton25/author/connor-j.-nolan/</loc>
     <lastmod>2019-05-09T22:41:07-05:00</lastmod>
   </url><url>
     <loc>jtipton25/author/john-r.-tipton/</loc>
     <lastmod>2019-05-09T22:41:07-05:00</lastmod>
   </url><url>
-    <loc>jtipton25/author/nolan/</loc>
+    <loc>jtipton25/author/mevin-b.-hooten/</loc>
     <lastmod>2019-05-09T22:41:07-05:00</lastmod>
   </url><url>
-    <loc>jtipton25/author/mevin-b.-hooten-connor-nolan-robert-k.-booth-jason-mclachlan/</loc>
+    <loc>jtipton25/author/robert-k.-booth/</loc>
+    <lastmod>2019-05-09T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/stephen-t.-jackson/</loc>
+    <lastmod>2019-05-09T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/connor-nolan/</loc>
+    <lastmod>2019-03-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/jason-mclachlan/</loc>
     <lastmod>2019-03-23T22:41:07-05:00</lastmod>
   </url><url>
     <loc>jtipton25/publication/2019aoas/</loc>
@@ -131,8 +128,149 @@
     <loc>jtipton25/slides/example/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>jtipton25/author/a.-peter-kershaw/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/a.-v.-lozhkin/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/anne-marie-lezine/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/annie-vincens/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/arata-momohara/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/bette-l.-otto-bliesner/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/brian-huntley/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/brian-m.-chase/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/caiming-shen/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/chengyu-weng/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/claudio-latorre/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/heather-a.-binney/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/hikaru-takahara/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/janelle-stevenson/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/john-dodson/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/jonathan-t.-overpeck/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/judy-r.-m.-allen/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/julio-l.-betancourt/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/kam-biu-liu/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/mark-b.-bush/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/mary-e.-edwards/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/matt-s.-mcglone/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/michelle-leydet/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/morteza-djamali/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
     <loc>jtipton25/publication/2018science/</loc>
     <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/patricia-m.-anderson/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/patricio-i.-moreno/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/pavel-e.-tarasov/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/qinghai-xu/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/rachid-cheddadi/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/robert-a.-marchant/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/sara-c.-hotchkiss/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/sarah-j.-ivory/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/simon-brewer/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/simon-haberle/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/soo-hyun-kim/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/stefanie-muller/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/william-d.-gosling/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/yao-liu/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/zhuo-zheng/</loc>
+    <lastmod>2018-08-31T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/crystal-s-stonesifer/</loc>
+    <lastmod>2017-05-19T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/david-e-calkin/</loc>
+    <lastmod>2017-05-19T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/erin-j-belval/</loc>
+    <lastmod>2017-05-19T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/matthew-p-thompson/</loc>
+    <lastmod>2017-05-19T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/publication/2017wildlandfire/</loc>
+    <lastmod>2017-05-19T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/yu-wei/</loc>
+    <lastmod>2017-05-19T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/publication/2017ascmo/</loc>
+    <lastmod>2017-01-27T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/simon-goring/</loc>
+    <lastmod>2017-01-27T22:41:07-05:00</lastmod>
   </url><url>
     <loc>jtipton25/tag/deep-learning/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
@@ -151,8 +289,6 @@
   </url><url>
     <loc>jtipton25/admin/</loc>
   </url><url>
-    <loc>jtipton25/author/connor-et.-al./</loc>
-  </url><url>
-    <loc>jtipton25/author/j.r./</loc>
+    <loc>jtipton25/students/</loc>
   </url>
 </urlset>
