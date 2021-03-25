@@ -2,7 +2,8 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: "Past and future global transformation of terrestrial ecosystems under climate change"
-authors: [Nolan, Connor et. al.]
+# authors: [Connor Nolan, and others]
+authors: ["Connor Nolan", "Jonathan T. Overpeck", "Judy R. M. Allen", "Patricia M. Anderson", "Julio L. Betancourt", "Heather A. Binney", "Simon Brewer", "Mark B. Bush", "Brian M. Chase", "Rachid Cheddadi", "Morteza Djamali", "John Dodson", "Mary E. Edwards", "William D. Gosling", "Simon Haberle", "Sara C. Hotchkiss", "Brian Huntley", "Sarah J. Ivory", "A. Peter Kershaw", "Soo-Hyun Kim", "Claudio Latorre", "Michelle Leydet", "Anne-Marie Lézine", "Kam-Biu Liu", "Yao Liu", "A. V. Lozhkin", "Matt S. McGlone", "Robert A. Marchant", "Arata Momohara", "Patricio I. Moreno", "Stefanie Müller", "Bette L. Otto-Bliesner", "Caiming Shen", "Janelle Stevenson", "Hikaru Takahara", "Pavel E. Tarasov", "**admin**", "Annie Vincens", "Chengyu Weng", "Qinghai Xu", "Zhuo Zheng", "Stephen T. Jackson"]
 date: 2018-08-31T22:41:07-05:00
 doi: "10.1126/science.aan5360"
 

@@ -2,7 +2,7 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: "Comparing and improving methods for reconstructing peatland water-table depth from testate amoebae"
-authors: [Nolan, John R. Tipton, J.R.; Robert K. Booth; Mevin B. Hooten; Stephen T. Jackson]
+authors: [Connor J. Nolan, John R. Tipton, Robert K. Booth, Mevin B. Hooten, Stephen T. Jackson]
 date: 2019-05-09T22:41:07-05:00
 doi: "https://doi.org/10.1177/0959683619846969"
 

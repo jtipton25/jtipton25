@@ -2,7 +2,7 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: "Predicting paleoclimate from compositional data using multivariate Gaussian process inverse prediction"
-authors: [Tipton, J.R., Mevin B. Hooten; Connor Nolan; Robert K. Booth; Jason McLachlan]
+authors: [admin, Mevin B. Hooten, Connor Nolan, Robert K. Booth, Jason McLachlan]
 date: 2019-03-23T22:41:07-05:00
 doi: "10.1214/19-AOAS1281"
 
