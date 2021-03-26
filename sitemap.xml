@@ -20,27 +20,6 @@
     <loc>jtipton25/event/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/publication-type/3/</loc>
-    <lastmod>2021-03-23T22:41:07-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/authors/</loc>
-    <lastmod>2021-03-23T22:41:07-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/publication/2021mathgeo/</loc>
-    <lastmod>2021-03-23T22:41:07-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/author/glenn-sharman-sam-johnstone/</loc>
-    <lastmod>2021-03-23T22:41:07-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/publication_types/</loc>
-    <lastmod>2021-03-23T22:41:07-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/publication/</loc>
-    <lastmod>2021-03-23T22:41:07-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/author/tipton/</loc>
-    <lastmod>2021-03-23T22:41:07-05:00</lastmod>
-  </url><url>
     <loc>jtipton25/courses/</loc>
     <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url><url>
@@ -48,6 +27,9 @@
     <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>jtipton25/tag/academic/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>jtipton25/authors/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>jtipton25/categories/</loc>
@@ -101,6 +83,12 @@
     <loc>jtipton25/publication/2020earthscience/</loc>
     <lastmod>2020-11-23T22:41:07-05:00</lastmod>
   </url><url>
+    <loc>jtipton25/publication_types/</loc>
+    <lastmod>2020-11-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/publication/</loc>
+    <lastmod>2020-11-23T22:41:07-05:00</lastmod>
+  </url><url>
     <loc>jtipton25/post/writing-technical-content/</loc>
     <lastmod>2019-07-12T00:00:00+00:00</lastmod>
   </url><url>
@@ -122,13 +110,37 @@
     <loc>jtipton25/author/stephen-t.-jackson/</loc>
     <lastmod>2019-05-09T22:41:07-05:00</lastmod>
   </url><url>
+    <loc>jtipton25/author/brian-m.-brost/</loc>
+    <lastmod>2019-03-23T22:41:07-05:00</lastmod>
+  </url><url>
     <loc>jtipton25/author/connor-nolan/</loc>
+    <lastmod>2019-03-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/frances-e.-buderman/</loc>
+    <lastmod>2019-03-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/henry-r.-scharf/</loc>
     <lastmod>2019-03-23T22:41:07-05:00</lastmod>
   </url><url>
     <loc>jtipton25/author/jason-mclachlan/</loc>
     <lastmod>2019-03-23T22:41:07-05:00</lastmod>
   </url><url>
+    <loc>jtipton25/author/kristin-m.-broms/</loc>
+    <lastmod>2019-03-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/perry-j.-williams/</loc>
+    <lastmod>2019-03-23T22:41:07-05:00</lastmod>
+  </url><url>
     <loc>jtipton25/publication/2019aoas/</loc>
+    <lastmod>2019-03-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/shannon-l.-kay/</loc>
+    <lastmod>2019-03-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/publication/2017ecology/</loc>
+    <lastmod>2019-03-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/trevor-j.-hefley/</loc>
     <lastmod>2019-03-23T22:41:07-05:00</lastmod>
   </url><url>
     <loc>jtipton25/post/jupyter/</loc>
@@ -299,10 +311,56 @@
     <loc>jtipton25/project/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>jtipton25/author/brett-johnson/</loc>
+    <lastmod>2016-02-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/brian-smith/</loc>
+    <lastmod>2016-02-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/daniel-bishop/</loc>
+    <lastmod>2016-02-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/douglas-silver/</loc>
+    <lastmod>2016-02-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/publication/2016greatlakes/</loc>
+    <lastmod>2016-02-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/james-sherwood/</loc>
+    <lastmod>2016-02-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/kyle-christianson/</loc>
+    <lastmod>2016-02-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/martin-tingley/</loc>
+    <lastmod>2016-02-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/neil-pederson/</loc>
+    <lastmod>2016-02-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/patrick-martinez/</loc>
+    <lastmod>2016-02-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/publication/2016environmetrics/</loc>
+    <lastmod>2016-02-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/william-pate/</loc>
+    <lastmod>2016-02-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/yun-hao/</loc>
+    <lastmod>2016-02-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/gretchen-moisen/</loc>
+    <lastmod>2013-12-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/jean-opsomer/</loc>
+    <lastmod>2013-12-23T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/publication/2013remotesensing/</loc>
+    <lastmod>2013-12-23T22:41:07-05:00</lastmod>
+  </url><url>
     <loc>jtipton25/admin/</loc>
   </url><url>
     <loc>jtipton25/students/</loc>
-  </url><url>
-    <loc>jtipton25/author/j.r./</loc>
   </url>
 </urlset>

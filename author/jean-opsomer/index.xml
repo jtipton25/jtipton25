@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jean Opsomer | John Tipton&#39;s Research Site</title>
+    <link>jtipton25/author/jean-opsomer/</link>
+      <atom:link href="jtipton25/author/jean-opsomer/index.xml" rel="self" type="application/rss+xml" />
+    <description>Jean Opsomer</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 23 Dec 2013 22:41:07 -0500</lastBuildDate>
+    <image>
+      <url>/jtipton25/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>Jean Opsomer</title>
+      <link>jtipton25/author/jean-opsomer/</link>
+    </image>
+    
+    <item>
+      <title>Properties of Endogenous Post-Stratified Estimation using remote sensing data</title>
+      <link>jtipton25/publication/2013remotesensing/</link>
+      <pubDate>Mon, 23 Dec 2013 22:41:07 -0500</pubDate>
+      <guid>jtipton25/publication/2013remotesensing/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

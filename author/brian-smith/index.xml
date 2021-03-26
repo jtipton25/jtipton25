@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Brian Smith | John Tipton&#39;s Research Site</title>
+    <link>jtipton25/author/brian-smith/</link>
+      <atom:link href="jtipton25/author/brian-smith/index.xml" rel="self" type="application/rss+xml" />
+    <description>Brian Smith</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 23 Feb 2016 22:41:07 -0500</lastBuildDate>
+    <image>
+      <url>/jtipton25/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>Brian Smith</title>
+      <link>jtipton25/author/brian-smith/</link>
+    </image>
+    
+    <item>
+      <title>Effect of net size on estimates of abundance, size/age, and sex of Mysis diluviana</title>
+      <link>jtipton25/publication/2016greatlakes/</link>
+      <pubDate>Tue, 23 Feb 2016 22:41:07 -0500</pubDate>
+      <guid>jtipton25/publication/2016greatlakes/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
