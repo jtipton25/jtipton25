@@ -2,12 +2,12 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: "Estimation of Sediment Mixing Distributions with Uncertainty Quantification using Bayesian Nonparametric Modeling"
-authors: [Tipton, J.R., Glenn Sharman; Sam Johnstone]
-date: 
+authors: [admin, Glenn Sharman, Sam Johnstone]
+date: 2022-12-23T22:41:07-05:00
 doi: ""
 
 # Schedule page publish date (NOT publication's date).
-publishDate: 2024-03-23T22:41:07-05:00
+publishDate: 2022-12-23T22:41:07-05:00
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article; 
