@@ -1,0 +1,28 @@
+---
+title: "Variational Bayesian Inference"
+author: ''
+date: '2021-04-27'
+slug: variational-bayesian-inference
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-04-27T13:22:47-05:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+draft: true
+---
+
+
+
+<p>The goal of variational inference is to replace the computationally expensive task of full Bayesian inference using Markov Chain Monte Carlo (MCMC) with a less computationally expensive optimization of an approximate distribution.</p>
+<p>Given a likelihood <span class="math inline">\(p(\mathbf{y} | \boldsymbol{\theta})\)</span> and prior <span class="math inline">\(p(\boldsymbol{\theta})\)</span>, the posterior distribution is</p>
+<p><span class="math display">\[\begin{align*}
+p(\boldsymbol{\theta} | \mathbf{y}) = \frac{p(\mathbf{y} | \boldsymbol{\theta}) p(\boldsymbol{\theta})}{\int p(\mathbf{y} | \boldsymbol{\theta}) p(\boldsymbol{\theta}) d \boldsymbol{\theta}}
+\end{align*}\]</span></p>
+<p>In general, calculating (or sampling from) the posterior distribution can be computationally challenging.</p>
