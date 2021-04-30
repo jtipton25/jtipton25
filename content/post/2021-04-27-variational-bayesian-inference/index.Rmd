@@ -35,6 +35,193 @@ In general, calculating (or sampling from) the posterior distribution can be com
 
 
 
+# Working
+
+
+
+
+It can be computationally challenging to sample from the posterior $p(\mathbf{y} | \boldsymbol{\theta})$ directly. Instead, we can find a distribution $q^\star(\boldsymbol{\theta})$ that is chosen from a family of densities $\mathcal{Q}$ where $q^\star(\boldsymbol{\theta})$ is the distribution in $\mathcal{Q}$ that best approximates the posterior distribution $p(\mathbf{y} | \boldsymbol{\theta})$ according to the Kullback-Leibler divergence
+$$
+\begin{align*}
+q^\star(\boldsymbol{\theta}) & = \stackrel{\argmin}{q(\boldsymbol{\theta}) \in \mathcal{Q}} KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})) \\
+& =  \int q(\boldsymbol{\theta}) \log \left( \frac{q(\boldsymbol{\theta})}{p(\mathbf{y} | \boldsymbol{\theta})} \right) d \boldsymbol{\theta} \\
+& = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( \frac{q(\boldsymbol{\theta})}{p(\mathbf{y} | \boldsymbol{\theta})} \right),
+\end{align*}
+$$
+where the Kullback-Leibler divergence measures the asymmetric difference between the densities $q(\boldsymbol{\theta})$ and $p(\boldsymbol{\theta} | \mathbf{y})$ (Note: $KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})) \neq KL(p(\mathbf{y} | \boldsymbol{\theta})| q(\boldsymbol{\theta}))$).
+
+Notice that this representation does not solve the computational challenge as the marginal density of the data $p(\mathbf{y}) = \int p(\mathbf{y} | \boldsymbol{\theta}) p(\boldsymbol{\theta}) d \boldsymbol{\theta}$ requires a high-dimensional integral. 
+
+Using the definition of conditional probability $p(\boldsymbol{\theta} | \mathbf{y}) = \frac{p(\mathbf{y}, \boldsymbol{\theta})} {p(\mathbf{y})}$, the Kullback-Leibler divergence can be written as
+$$
+\begin{align*}
+ KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})) & = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( \frac{q(\boldsymbol{\theta})}{p(\mathbf{y} | \boldsymbol{\theta}} \right) \\
+& = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( q(\boldsymbol{\theta} ) \right) - \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( p(\mathbf{y} | \boldsymbol{\theta} ) \right) \\
+& = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( q(\boldsymbol{\theta}) \right) - \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( \frac{p(\mathbf{y}, \boldsymbol{\theta})} {p(\mathbf{y})} \right) \\
+& = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( q(\boldsymbol{\theta}) \right) - \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) + \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( p(\mathbf{y}) \right) \\
+& = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( q(\boldsymbol{\theta}) \right) - \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) + \log \left( p(\mathbf{y}) \right),
+\end{align*}
+$$
+where the last term in the last equation is the log of the marginal density of the data which is given by the high dimensional integral $p(\mathbf{y}) = \int p(\mathbf{y} | \boldsymbol{\theta}) p(\boldsymbol{\theta}) d \boldsymbol{\theta}$ and is a constant with respect to the approximating distribution $q(\boldsymbol{\theta})$ and is ignorable in the optimization (Note: this distinction leads to the variational approximation underestimating the posterior variance).
+
+Define $ELBO(q)$ as the evidence lower bound with respect to the approximating distribution as
+$$
+\begin{align*}
+ELBO(q) & = - \left(  KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})) - \log \left( p(\mathbf{y}) \right) \right).
+\end{align*}
+$$
+We can re-write this equation to be a function of the log [marignal likelihood](https://en.wikipedia.org/wiki/Marginal_likelihood) of the data $\log \left( p(\mathbf{y} ) \right)$ which is also called the evidence. Thus, the evidence can be written as
+
+$$
+\begin{align*}
+\log \left( p(\mathbf{y}) \right) & = ELBO(q) + KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})) \\
+& \geq ELBO(q),
+\end{align*}
+$$
+because the Kullback-Leibler divergence $KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta}))$ is non-negative. Thus, the evidence $\log \left( p(\mathbf{y} )\right)$ is bounded below by the $ELBO(q)$. Thus, making the $ELBO(q)$ as large as possible results in minimizing the Kullback-Leibler divergence $KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta}))$.
+
+
+
+
+# Understanding the $ELBO(q)$ as a penalized optimization
+
+$$
+\begin{align*}
+ELBO(q) & = - \left(  KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})) - \log \left( p(\mathbf{y} \right) \right) \\
+& = - \left( \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( q(\boldsymbol{\theta}) \right) - \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) + \log \left( p(\mathbf{y}) \right)  - \log \left( p(\mathbf{y} ) \right) \right) \\
+& = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) - \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( q(\boldsymbol{\theta}) \right) 
+\end{align*}
+$$
+
+
+
+Using the definition of conditional probability $p(\boldsymbol{\theta} | \mathbf{y}) = \frac{p(\mathbf{y}, \boldsymbol{\theta})} {p(\mathbf{y})}$ again, we can write $ELBO(q)$ as
+$$
+\begin{align*}
+ELBO(q) & = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) - \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( q(\boldsymbol{\theta}) \right) \\
+& = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( p(\mathbf{y} | \boldsymbol{\theta}) \right) + \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( p(\boldsymbol{\theta}) \right) - \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( q(\boldsymbol{\theta}) \right) \\
+& = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( p(\mathbf{y} | \boldsymbol{\theta}) \right) + \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( \frac{p(\boldsymbol{\theta})}{q(\boldsymbol{\theta})} \right) \\
+& = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( p(\mathbf{y} | \boldsymbol{\theta}) \right) - \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( \frac{q(\boldsymbol{\theta})}{p(\boldsymbol{\theta})} \right) \\
+& = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( p(\mathbf{y} | \boldsymbol{\theta}) \right) - KL(q(\boldsymbol{\theta}) | p(\boldsymbol{\theta})),
+\end{align*}
+$$
+where the maximization of the $ELBO(q)$ is now expressed as an optimization over the distributions $q(\boldsymbol{\theta})$ that maximize the log-likelihood of the data $p(\mathbf{y} | \boldsymbol{\theta})$ subject to a penalty term if the approximating distribution $q(\boldsymbol{\theta})$ is far from the prior distribution $p(\boldsymbol{\theta})$ with respect to the Kullback-Leibler divergence.
+
+# Finding the optimal $q^\star(\boldsymbol{\theta})$
+
+In a usual optimization problem, the goal is to find the value of $\boldsymbol{\theta}$ that maximizes the log-likelihood. In contrast, the variational optimization finds the functional $q(\boldsymbol{\theta})$ that minimizes the Kullback-Leibler divergence. A functional is a function that takes as inputs a function and returns either a single value or a function as an output. 
+
+
+To perform the optimization, we want to find the function $q(\boldsymbol{\theta}) \in \mathcal{Q}$ that minimizes the functional $ELBO(q)$. In general, to make the optimization computationally tractable, we find a solution to a constrained family of functions. A possible approach is to assume is that $\mathcal{Q}$ is a family of Gaussian distributions where $q(\boldsymbol{\theta})$ with parameter vector $\boldsymbol{\gamma}$. In this setting, the $ELBO(q)$ is thus a function of $\boldsymbol{\gamma}$ and maximizing the $ELBO(q)$ becomes a usual optimization. 
+
+## Mean field variational inference
+
+The mean field approximation is named because we model the $d$ dimensional latent vector $\boldsymbol{\theta} = (\theta_1, \ldots, \theta_d)'$ through its mean (and not its covariance) by assuming that for $j = 1, \ldots, d$ the approximating distributions $q(\boldsymbol{\theta})$ can be factored into independent distributions
+$$
+\begin{align*}
+q(\boldsymbol{\theta}) = \prod_{j=1}^d q_j(\theta_j)
+\end{align*}
+$$
+where the functional form for $q_j(\theta_j)$ can be derived for each parameter $\theta_j$.
+
+Under the mean field assumption, the $ELBO(q)$ can be written as
+$$
+\begin{align*}
+ELBO(q) & = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) - \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( q(\boldsymbol{\theta}) \right) \\
+& = \int q(\boldsymbol{\theta}) \log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) d \boldsymbol{\theta} - \int q(\boldsymbol{\theta}) \log \left( q(\boldsymbol{\theta}) \right) d \boldsymbol{\theta} \\
+& = \int \prod_{j=1}^d q_j(\theta_j) \log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) d \boldsymbol{\theta} - \int \prod_{j=1}^d q_j(\theta_j) \log \left( \prod_{j=1}^d q_j(\theta_j) \right) d \boldsymbol{\theta} 
+\end{align*}
+$$
+Optimizing the $ELBO(q)$ can be done using coordinate ascent variational inference where the optimization is performed using the conditional posterior distribution for each component $\theta_j$ given the other components $\boldsymbol{\theta}_{-j}$ where $\boldsymbol{\theta}_{-j} = (\theta_1, \ldots, \theta_{j-1}, \theta_{j+1}, \ldots, \theta_d)'$ which is the $d-1$ dimensional vector of all the elements of $\boldsymbol{\theta}$ except for the $j$th element. Thus the $ELBO(q_j)$ with respect to the $j$th element $\theta_j$ of $\boldsymbol{\theta}$ while holding all other $\boldsymbol{\theta}_{-j}$ constant is
+$$
+\begin{align*}
+ELBO(q_j) & = \int \prod_{j=1}^d q_j(\theta_j) \log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) d \boldsymbol{\theta} - \int \prod_{j=1}^d q_j(\theta_j) \log \left( \prod_{j=1}^d q_j(\theta_j) \right) d \boldsymbol{\theta} \\
+ & = \int \prod_{j=1}^d q_j(\theta_j) \log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) d \boldsymbol{\theta} - \int q_j(\theta_j) \log \left( q_j(\theta_j) \right) d \theta_j  - \int \prod_{k\neq j} q_k(\theta_k) \log \left( \prod_{k \neq j} q_k(\theta_k) \right) d \boldsymbol{\theta}_{-j} & \color{red}{\mbox{Don't understand this step yet--not convinced this is correct}}\\
+\end{align*}
+$$
+Noticing that $\int \prod_{k\neq j} q_k(\theta_k) \log \left( \prod_{k \neq j} q_k(\theta_k) \right) d \boldsymbol{\theta}_{-j}$ is constant with respect to $q_j(\theta_j)$, this term can be dropped from the optimization giving
+$$
+\begin{align*}
+ELBO(q_j) & \propto \int \prod_{j=1}^d q_j(\theta_j) \log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) d \boldsymbol{\theta} - \int q_j(\theta_j) \log \left( q_j(\theta_j) \right) d \theta_j  \\
+& = \int q_j(\theta_j) \left( \int \prod_{k \neq j} q_k(\theta_k) \log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) d \boldsymbol{\theta}_j \right) d \theta_j - \int q_j(\theta_j) \log \left( q_j(\theta_j) \right) d \theta_j  \\
+& = \int q_j(\theta_j) E_{q(\boldsymbol{\theta}_{-j})} \left(\log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) \right) d \theta_j - \int q_j(\theta_j) \log \left( q_j(\theta_j) \right) d \theta_j.
+\end{align*}
+$$
+Maximizing the $ELBO(q_j)$ requires evaluating the expectation $E_{q(\boldsymbol{\theta}_{-j})} \left(\log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) \right)$. Define the distribution
+$$
+\begin{align*}
+\log \left( \tilde{p}(\mathbf{y}, \theta_j) \right) & = E_{q(\boldsymbol{\theta}_{-j})} \left(\log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) \right) - \mathcal{Z}
+\end{align*}
+$$
+where $\mathcal{Z}$ is a normalizing constant that ensures the distribution $\tilde{p}(\mathbf{y}, \theta_j)$ integrates to one. Then, we have
+$$
+\begin{align*}
+ELBO(q_j) & \propto \int q_j(\theta_j) E_{q(\boldsymbol{\theta}_{-j})} \left(\log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) \right) d \theta_j - \int q_j(\theta_j) \log \left( q_j(\theta_j) \right) d \theta_j \\
+& = \int q_j(\theta_j) \log \left( \tilde{p}(\mathbf{y}, \theta_j) \right)  d \theta_j - \int q_j(\theta_j) \log \left( q_j(\theta_j) \right) d \theta_j \\
+& = \int q_j(\theta_j) \log \left( \frac{\tilde{p}(\mathbf{y}, \theta_j)}{q_j(\theta_j)} \right)  d \theta_j \\
+& = - \int q_j(\theta_j) \log \left( \frac{q_j(\theta_j)}{\tilde{p}(\mathbf{y}, \theta_j)} \right)  d \theta_j \\
+& = - KL \left( q_j(\theta_j) | \tilde{p}(\mathbf{y}, \theta_j) \right),
+\end{align*}
+$$
+which shows that maximizing the ELBO with respect to $q_j(\theta_j)$ is equivalent to minimizing the Kullback-Leibler divergence between $q_j(\theta_j)$ and $\tilde{p}(\mathbf{y}, \theta_j)$. When $q_j(\theta_j) = \tilde{p}(\mathbf{y}, \theta_j)$, the Kullback-Leibler divergence is at its minimum value of zero. Therefore, the distribution that maximizes the density $q_j(\theta_j)$ conditional on the distributions $\{q_1(\theta_1), \ldots, q_{j-1}(\theta_{j-1}), q_{j+1}(\theta_{j+1}), \ldots, q_d(\theta_d)\}$ is
+$$
+\begin{align*}
+q^\star_j(\theta_j) & = \exp\left( E_{q(\boldsymbol{\theta}_{-j})} \left(\log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) \right) - \mathcal{Z} \right) \\
+& = \frac{\exp\left( E_{q(\boldsymbol{\theta}_{-j})} \left(\log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) \right) \right)}{\int \exp\left( E_{q(\boldsymbol{\theta}_{-j})} \left(\log \left( p(\mathbf{y}, \boldsymbol{\theta}) \right) \right) d \theta_j \right)}
+\end{align*}
+$$
+
+# Example: Linear regression
+
+For $i = 1, \ldots, n$, let $y_i$ be an observation with associated covariate vector $\mathbf{x}_i$ (including an intercept term). Then, the linear regression model can be written as
+$$
+\begin{align*}
+y_i & \sim N(\mathbf{x}_i' \boldsymbol{\beta}, \sigma^2)
+\end{align*}
+$$
+where the parameters $\boldsymbol{\beta}$ and $\sigma^2$ are assigned priors
+$$
+\begin{align*}
+\boldsymbol{\beta} & \sim N(\boldsymbol{\mu}_\beta, \sigma^2 \boldsymbol{\Sigma}_\beta) \\
+\sigma^2 & \sim \operatorname{inverse-gamma}(\alpha_{\sigma^2}, \beta_{\sigma^2})
+\end{align*}
+$$
+
+## Variational density for $\boldsymbol{\beta}
+
+The optimal variational density $q^\star(\boldsymbol{\beta})$ is given by
+$$
+\begin{align*}
+q^\star(\boldsymbol{\beta}) \propto \exp \left( E_{q(\sigma^2)} \left( \log \left( p(\boldsymbol{\beta} | \mathbf{y}, \sigma^2 ) \right) \right) \right)
+\end{align*}
+$$
+which requires finding the full conditional distribution $p(\boldsymbol{\beta} | \mathbf{y}, \sigma^2 )$. The full conditional distribution is
+$$
+\begin{align*}
+p(\boldsymbol{\beta} | \mathbf{y}, \sigma^2 ) \propto N(\mathbf{A}^{-1} \mathbf{b}, \mathbf{A}^{-1}) \mbox{ where } \\
+\mathbf{A} & = \frac{1}{\sigma^2} \left( \mathbf{X}'\mathbf{X} + \boldsymbol{\Sigma}_\beta^{-1} \right) \\
+\mathbf{b} & = \frac{1}{\sigma^2} \left( \mathbf{X}'\mathbf{y} + \boldsymbol{\Sigma}_\beta^{-1} \boldsymbol{\mu}_\beta \right)
+\end{align*}
+$$
+Thus, the variational density is
+$$
+\begin{align*}
+q^\star(\boldsymbol{\beta}) & \propto \exp \left( E_{q(\sigma^2)} \left( \log \left( p(\boldsymbol{\beta} | \mathbf{y}, \sigma^2 ) \right) \right) \right) \\
+& = \exp \left(  E_{q(\sigma^2)} \left( -\frac{1}{2} \left( \boldsymbol{\beta} - \mathbf{A}^{-1} \mathbf{b} \right)' \mathbf{A}^{-1} \left( \boldsymbol{\beta} - \mathbf{A}^{-1} \mathbf{b} \right) \right) \right) \\
+& = \exp \left(  -\frac{1}{2} \left( \boldsymbol{\beta} - \mathbf{A}^{-1} \mathbf{b} \right)' E_{q(\sigma^2)} (\sigma^2) \left( \mathbf{X}'\mathbf{X} + \boldsymbol{\Sigma}_\beta^{-1} \right)^{-1}  \left( \boldsymbol{\beta} - \mathbf{A}^{-1} \mathbf{b} \right) \right) \\
+\end{align*}
+$$
+which is proportional to a Gaussian distribution
+
+
+
+
+
+
+
+
+
+
 
 
 
