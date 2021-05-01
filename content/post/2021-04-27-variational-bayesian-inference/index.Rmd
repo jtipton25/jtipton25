@@ -171,7 +171,62 @@ q^\star_j(\theta_j) & = \exp\left( E_{q(\boldsymbol{\theta}_{-j})} \left(\log \l
 \end{align*}
 $$
 
-# Example: Linear regression
+# Example: Simple Linear regression
+
+For $i = 1, \ldots, n$, let $y_i$ be an observation with mean $\mu$ and associated covariate $x_i$ with slope $\beta$. Then, the linear regression model can be written as
+$$
+\begin{align*}
+y_i & \sim N(\mu + x_i \beta, \sigma^2)
+\end{align*}
+$$
+where the parameters $\mu$, $\beta$, and $\sigma^2$ are assigned priors
+$$
+\begin{align*}
+\mu & \sim N(\mu_\mu, \sigma^2 \sigma^2_\mu) \\
+\beta & \sim N(\mu_\beta, \sigma^2 \sigma^2_\beta) \\
+\sigma^2 & \sim \operatorname{inverse-gamma}(\alpha_{\sigma^2}, \beta_{\sigma^2})
+\end{align*}
+$$
+
+## Variational density for $\beta
+
+The optimal variational density $q^\star(\beta)$ is given by
+$$
+\begin{align*}
+q^\star(\beta) \propto \exp \left( E_{q(\sigma^2)} \left( \log \left( p(\beta | \mathbf{y}, \sigma^2 ) \right) \right) \right)
+\end{align*}
+$$
+which requires finding the full conditional distribution $p(\beta | \mathbf{y}, \sigma^2 )$. The full conditional distribution is
+$$
+\begin{align*}
+p(\beta | \mathbf{y}, \mu, \sigma^2 ) & \propto N(a^{-1}b, a^{-1}) \mbox{ where } \\
+a & = \frac{1}{\sigma^2} \left( \sum_{i=1}^n x_i^2 + \frac{1}{\sigma^2_\beta} \right) \\
+b & = \frac{1}{\sigma^2} \left( \sum_{i=1}^n x_i (y_i - \mu) + \frac{\mu_\beta}{\sigma^2_\beta} \right)
+\end{align*}
+$$
+Thus, the variational density is
+$$
+\begin{align*}
+q^\star(\beta) & \propto \exp \left( E_{q(\sigma^2)} E_{q(\mu)} \left( \log \left( p(\beta | \mathbf{y}, \mu, \sigma^2 ) \right) \right) \right) \\
+& = \exp \left(  E_{q(\sigma^2)}  E_{q(\mu)} \left( -\frac{1}{2} a \left( \beta - a^{-1} b \right)^2 \right) \right)  \\
+& = \exp \left(  - \frac{1}{2} E_{q(\sigma^2)} \left( \frac{1}{\sigma^2} \right) \left( \sum_{i=1}^n x_i^2 + \frac{1}{\sigma^2_\beta} \right) E_{q(\mu)} \left( \left( \beta - \frac{\sum_{i=1}^n x_i (y_i - \mu) + \frac{\mu_\beta}{\sigma^2_\beta}}{ \sum_{i=1}^n x_i^2 + \frac{1}{\sigma^2_\beta}} \right)^2 \right) \right) \\
+\end{align*}
+$$
+which is proportional to a Gaussian distribution
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Example: Multiple Linear regression
 
 For $i = 1, \ldots, n$, let $y_i$ be an observation with associated covariate vector $\mathbf{x}_i$ (including an intercept term). Then, the linear regression model can be written as
 $$
