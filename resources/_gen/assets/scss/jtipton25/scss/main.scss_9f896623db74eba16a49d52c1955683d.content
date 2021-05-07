@@ -9480,3 +9480,7 @@ div.chart {
   margin-right: auto;
   margin-bottom: 1rem;
   overflow-x: auto; }
+
+.MathJax {
+  overflow-x: auto;
+  /* Horizontally scroll long equations. */ }
