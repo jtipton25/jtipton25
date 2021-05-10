@@ -187,12 +187,13 @@ $$
 \end{align*}
 $$
 
+### Determining the variational densities
 ## Variational density for $\beta$
 
 The optimal variational density $q^\star(\beta)$ is given by
 $$
 \begin{align*}
-q^\star(\beta) \propto \exp \left( E_{q(\mu)} \left(  E_{q(\sigma^2)} \left( \log \left( p(\beta | \mathbf{y}, \mu, \sigma^2 ) \right) \right) \right) \right)
+q^\star(\beta) \propto \exp \left( E_{q(\mu), q(\sigma^2)} \left( \log \left( p(\beta | \mathbf{y}, \mu, \sigma^2 ) \right) \right) \right) 
 \end{align*}
 $$
 which requires finding the full conditional distribution $p(\beta | \mathbf{y}, \mu, \sigma^2 )$. The full conditional distribution is
@@ -206,26 +207,26 @@ $$
 Thus, the variational density is
 $$
 \begin{align*}
-q^\star(\beta) & \propto \exp \left( E_{q(\sigma^2)} E_{q(\mu)} \left( \log \left( p(\beta | \mathbf{y}, \mu, \sigma^2 ) \right) \right) \right) \\
-& \propto \exp \left(  E_{q(\sigma^2)}  E_{q(\mu)} \left( -\frac{1}{2} a \left( \beta - a^{-1} b \right)^2 \right) \right)  \\
+q^\star(\beta) & \propto \exp \left( E_{q(\sigma^2), q(\mu)} \left( \log \left( p(\beta | \mathbf{y}, \mu, \sigma^2 ) \right) \right) \right) \\
+& \propto \exp \left(  E_{q(\sigma^2), q(\mu)} \left( -\frac{1}{2} a \left( \beta - a^{-1} b \right)^2 \right) \right)  \\
 & = \exp \left(  - \frac{1}{2} E_{q(\sigma^2)} \left( \frac{1}{\sigma^2} \right) \left( \sum_{i=1}^n x_i^2 + \frac{1}{\sigma^2_\beta} \right)  \left( \beta - \frac{\sum_{i=1}^n x_i (y_i - E_{q(\mu)} \left(\mu \right) + \frac{\mu_\beta}{\sigma^2_\beta}}{ \sum_{i=1}^n x_i^2 + \frac{1}{\sigma^2_\beta}} \right)^2  \right) \\
 \end{align*}
 $$
 which is proportional to a Gaussian distribution with mean 
 $$
 \begin{align*}
-& E_{q(\sigma^2)}) \left(  E_{q(\mu)} \left( \sigma^2 \left( \sum_{i=1}^n x_i^2 + \frac{1}{\sigma^2_\beta} \right)^{-1} \frac{1}{\sigma^2} \left( \sum_{i=1}^n x_i \left( y_i - \mu \right) + \frac{\mu_\beta}{\sigma^2_\beta} \right) \right) \right) \\
+& E_{q(\sigma^2), q(\mu)} \left( \sigma^2 \left( \sum_{i=1}^n x_i^2 + \frac{1}{\sigma^2_\beta} \right)^{-1} \frac{1}{\sigma^2} \left( \sum_{i=1}^n x_i \left( y_i - \mu \right) + \frac{\mu_\beta}{\sigma^2_\beta} \right) \right)  \\
 & =  \left( \sum_{i=1}^n x_i^2 + \frac{1}{\sigma^2_\beta} \right)^{-1} \left( \sum_{i=1}^n x_i \left( y_i -  E_{q(\mu)} \left( \mu \right) \right) + \frac{\mu_\beta}{\sigma^2_\beta} \right)
 \end{align*}
 $$
-and variance $E_{q(\sigma^2)} (\frac{1}{\sigma^2}) \left( \sum_{i=1}^n x_i^2 + \frac{1}{\sigma^2_\beta} \right)$ where the mean term depends on $E_{q(\mu)} \left(\mu)$ and the variance term depends on $E_{q(\sigma^2)} (\frac{1}{\sigma^2})$. Thus, to evaluate this density, we have to also find the variational densities $q(\sigma^2)$ and $q(\mu)$.
+and variance $E_{q(\sigma^2)} (\frac{1}{\sigma^2}) \left( \sum_{i=1}^n x_i^2 + \frac{1}{\sigma^2_\beta} \right)^{-1}$ where the mean term depends on $E_{q(\mu)} \left(\mu)$ and the variance term depends on $E_{q(\sigma^2)} (\frac{1}{\sigma^2})$. Thus, to evaluate this density, we have to also find the variational densities $q(\sigma^2)$ and $q(\mu)$.
 
 ## Variational density for $\mu$
 
 The optimal variational density $q^\star(\mu)$ is given by
 $$
 \begin{align*}
-q^\star(\mu) \propto \exp \left( E_{q(\sigma^2)} \left( E_{q(\beta)} \left( \log \left( p(\mu | \mathbf{y}, \beta, \sigma^2 ) \right) \right) \right) \right)
+q^\star(\mu) \propto \exp \left( E_{q(\sigma^2), q(\beta)} \left( \log \left( p(\mu | \mathbf{y}, \beta, \sigma^2 ) \right) \right) \right)
 \end{align*}
 $$
 which requires finding the full conditional distribution $p(\mu | \mathbf{y}, \beta, \sigma^2 )$. The full conditional distribution is
@@ -239,19 +240,19 @@ $$
 Thus, the variational density is
 $$
 \begin{align*}
-q^\star(\mu) & \propto \exp \left( E_{q(\sigma^2)} E_{q(\beta)} \left( \log \left( p(\mu | \mathbf{y}, \beta, \sigma^2 ) \right) \right) \right) \\
-& = \exp \left(  E_{q(\sigma^2)}  E_{q(\beta)} \left( -\frac{1}{2} a \left( \mu - a^{-1} b \right)^2 \right) \right)  \\
-& = \exp \left(  - \frac{1}{2} E_{q(\sigma^2)} \left( \frac{1}{\sigma^2} \right) \left( n + \frac{1}{\sigma^2_\mu} \right) E_{q(\mu)} \left( \left( \mu - \frac{\sum_{i=1}^n (y_i - x_i \beta) + \frac{\mu_\mu}{\sigma^2_\mu}}{ n + \frac{1}{\sigma^2_\mu}} \right)^2 \right) \right) \\
+q^\star(\mu) & \propto \exp \left( E_{q(\sigma^2), q(\beta)} \left( \log \left( p(\mu | \mathbf{y}, \beta, \sigma^2 ) \right) \right) \right) \\
+& = \exp \left(  E_{q(\sigma^2), q(\beta)} \left( -\frac{1}{2} a \left( \mu - a^{-1} b \right)^2 \right) \right)  \\
+& = \exp \left(  - \frac{1}{2} E_{q(\sigma^2)} \left( \frac{1}{\sigma^2} \right) \left( n + \frac{1}{\sigma^2_\mu} \right) E_{q(\beta)} \left( \left( \mu - \frac{\sum_{i=1}^n (y_i - x_i \beta) + \frac{\mu_\mu}{\sigma^2_\mu}}{ n + \frac{1}{\sigma^2_\mu}} \right)^2 \right) \right) \\
 \end{align*}
 $$
 which is proportional to a Gaussian distribution with mean 
 $$
 \begin{align*}
-& E_{q(\sigma^2)}) \left( E_{q(\beta)} \left( \sigma^2 \left( n + \frac{1}{\sigma^2_\mu} \right)^{-1} \frac{1}{\sigma^2} \left( \sum_{i=1}^n \left( y_i - x_i \mu \right) + \frac{\mu_\mu}{\sigma^2_\mu} \right) \right) \right) \\
-& = E_{q(\sigma^2)}) \left(  \left( n + \frac{1}{\sigma^2_\mu} \right)^{-1} \left( \sum_{i=1}^n \left( y_i - x_i E_{q(\beta)} \left( \beta \right) \right) + \frac{\mu_\mu}{\sigma^2_\mu} \right) \right) 
+& E_{q(\sigma^2), q(\beta)} \left( \sigma^2 \left( n + \frac{1}{\sigma^2_\mu} \right)^{-1} \frac{1}{\sigma^2} \left( \sum_{i=1}^n \left( y_i - x_i \beta \right) + \frac{\mu_\mu}{\sigma^2_\mu} \right) \right)  \\
+& =\left( n + \frac{1}{\sigma^2_\mu} \right)^{-1} \left( \sum_{i=1}^n \left( y_i - x_i E_{q(\beta)} \left( \beta \right) \right) + \frac{\mu_\mu}{\sigma^2_\mu} \right)
 \end{align*}
 $$
-and variance $E_{q(\sigma^2)} (\frac{1}{\sigma^2}) \left( n + \frac{1}{\sigma^2_\mu} \right)$ where the mean term depends on $E_{q(\beta)} (\beta)$ and the variance term depends on $E_{q(\sigma^2)} (\frac{1}{\sigma^2})$. Thus, to evaluate this density, we have to also find the variational densities $q(\sigma^2)$ and $q(\beta)$.
+and variance $E_{q(\sigma^2)} (\frac{1}{\sigma^2}) \left( n + \frac{1}{\sigma^2_\mu} \right)^{-1}$ where the mean term depends on $E_{q(\beta)} (\beta)$ and the variance term depends on $E_{q(\sigma^2)} (\frac{1}{\sigma^2})$. Thus, to evaluate this density, we have to also find the variational densities $q(\sigma^2)$ and $q(\beta)$.
 
 
 
@@ -260,7 +261,7 @@ and variance $E_{q(\sigma^2)} (\frac{1}{\sigma^2}) \left( n + \frac{1}{\sigma^2_
 The optimal variational density $q^\star(\sigma^2)$ is given by
 $$
 \begin{align*}
-q^\star(\sigma^2) \propto \exp \left( E_{q(\mu)} \left( E_{q(\beta)} \left( \log \left( p(\sigma^2 | \mathbf{y}, \mu, \beta ) \right) \right) \right) \right)
+q^\star(\sigma^2) \propto \exp \left( E_{q(\mu), q(\beta)} \left( \log \left( p(\sigma^2 | \mathbf{y}, \mu, \beta ) \right) \right) \right) 
 \end{align*}
 $$
 which requires finding the full conditional distribution $p(\sigma^2 | \mathbf{y}, \mu, \beta )$. The full conditional distribution is
@@ -282,11 +283,13 @@ $$
 which is proportional to an inverse-gamma distribution with mean 
 $$
 \begin{align*}
-& E_{q(\sigma^2)}) \left( E_{q(\beta)} \left( \sigma^2 \left( n + \frac{1}{\sigma^2_\mu} \right)^{-1} \frac{1}{\sigma^2} \left( \sum_{i=1}^n \left( y_i - x_i \mu \right) + \frac{\mu_\mu}{\sigma^2_\mu} \right) \right) \right) \\
+& E_{q(\sigma^2), q(\beta)} \left( \sigma^2 \left( n + \frac{1}{\sigma^2_\mu} \right)^{-1} \frac{1}{\sigma^2} \left( \sum_{i=1}^n \left( y_i - x_i \mu \right) + \frac{\mu_\mu}{\sigma^2_\mu} \right) \right)  \\
 & = E_{q(\sigma^2)}) \left(  \left( n + \frac{1}{\sigma^2_\mu} \right)^{-1} \left( \sum_{i=1}^n \left( y_i - x_i E_{q(\beta)} \left( \beta \right) \right) + \frac{\mu_\mu}{\sigma^2_\mu} \right) \right) 
 \end{align*}
 $$
 and variance $E_{q(\sigma^2)} (\frac{1}{\sigma^2}) \left( n + \frac{1}{\sigma^2_\mu} \right)$ where the mean term depends on $ E_{q(\beta)} \left(\beta)$ and the variance term depends on $E_{q(\sigma^2)} (\frac{1}{\sigma^2})$. Thus, to evaluate this density, we have to also find the variational densities $q(\sigma^2)$ and $q(\beta)$.
+
+## Evaluating the expectations inside the variational densities
 
 
 
