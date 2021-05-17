@@ -20,6 +20,33 @@ draft: true
 
 
 
+<div id="blogdown" class="section level1">
+<h1>Blogdown</h1>
+<p>This tutorial will walk you through the steps</p>
+<ul>
+<li>config</li>
+<li>gitHubPAT</li>
+<li>gitHub secrets</li>
+</ul>
+</div>
+<div id="choosing-a-theme" class="section level1">
+<h1>Choosing a theme</h1>
+</div>
+<div id="adding-content-to-the-blog" class="section level1">
+<h1>Adding content to the blog</h1>
+</div>
+<div id="using-the-renv-package-to-manage-r-package-dependencies" class="section level1">
+<h1>Using the renv package to manage R package dependencies</h1>
+</div>
+<div id="getting-equations-to-horizontal-scroll" class="section level1">
+<h1>Getting equations to horizontal scroll</h1>
+<p>Modify the file <code>/themes/github.com/wowchemy/wowchemy-hugo-modules/wowchemy/assets/scss/custom.scss</code> to</p>
+<pre class="r"><code>cat(readLines(here::here(&quot;themes&quot;, &quot;github.com&quot;, &quot;wowchemy&quot;, &quot;wowchemy-hugo-modules&quot;, &quot;wowchemy&quot;, &quot;assets&quot;, &quot;scss&quot;, &quot;custom.scss&quot;)), sep = &#39;\n&#39;)</code></pre>
+<pre><code>// Override this file to add your own SCSS styling.
+.MathJax {
+  overflow-x: auto; /* Horizontally scroll long equations. */
+}</code></pre>
+</div>
 <div id="blogdown-and-github" class="section level1">
 <h1><code>blogdown</code> and gitHub</h1>
 <ul>
@@ -582,33 +609,4 @@ tinytex::install_tinytex()</code></pre>
 <p>to confirm that the correct path has been deleted from tracking by git. Then add the deleted directory back into tracking by git with</p>
 <pre class="bash"><code>git add ./path/to/</code></pre>
 <p>Then commit and push. Verify that the website builds correctly on Netlify</p>
-</div>
-<div id="blogdown" class="section level1">
-<h1>Blogdown</h1>
-</div>
-<div id="github-actions" class="section level1">
-<h1>Github actions</h1>
-<ul>
-<li>config</li>
-<li>gitHubPAT</li>
-<li>gitHub secrets</li>
-</ul>
-</div>
-<div id="choosing-a-theme" class="section level1">
-<h1>Choosing a theme</h1>
-</div>
-<div id="adding-content-to-the-blog" class="section level1">
-<h1>Adding content to the blog</h1>
-</div>
-<div id="using-the-renv-package-to-manage-r-package-dependencies" class="section level1">
-<h1>Using the renv package to manage R package dependencies</h1>
-</div>
-<div id="getting-equations-to-horizontal-scroll" class="section level1">
-<h1>Getting equations to horizontal scroll</h1>
-<p>Modify the file <code>/themes/github.com/wowchemy/wowchemy-hugo-modules/wowchemy/assets/scss/custom.scss</code> to</p>
-<pre class="r"><code>cat(readLines(here::here(&quot;themes&quot;, &quot;github.com&quot;, &quot;wowchemy&quot;, &quot;wowchemy-hugo-modules&quot;, &quot;wowchemy&quot;, &quot;assets&quot;, &quot;scss&quot;, &quot;custom.scss&quot;)), sep = &#39;\n&#39;)</code></pre>
-<pre><code>// Override this file to add your own SCSS styling.
-.MathJax {
-  overflow-x: auto; /* Horizontally scroll long equations. */
-}</code></pre>
 </div>
