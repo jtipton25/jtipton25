@@ -54,6 +54,45 @@ hl <- function(x) {
 # })
 ```
 
+
+
+
+
+
+
+# Blogdown
+
+This tutorial will walk you through the steps 
+
+
+
+
+
+
+- config
+- gitHubPAT
+- gitHub secrets
+    
+# Choosing a theme
+
+
+# Adding content to the blog
+
+# Using the renv package to manage R package dependencies
+
+
+
+# Getting equations to horizontal scroll
+
+Modify the file `/themes/github.com/wowchemy/wowchemy-hugo-modules/wowchemy/assets/scss/custom.scss` to 
+```{r comment=''}
+cat(readLines(here::here("themes", "github.com", "wowchemy", "wowchemy-hugo-modules", "wowchemy", "assets", "scss", "custom.scss")), sep = '\n')
+```
+
+
+
+
+
 # `blogdown` and gitHub
 
 * Setting up a blog is easy using the `R` package blogdown
@@ -1002,40 +1041,6 @@ Then commit and push. Verify that the website builds correctly on Netlify
 
 
 
-
-
-
-
-
-
-
-# Blogdown
-
-# Github actions
-
-
-
-
-
-- config
-- gitHubPAT
-- gitHub secrets
-    
-# Choosing a theme
-
-
-# Adding content to the blog
-
-# Using the renv package to manage R package dependencies
-
-
-
-# Getting equations to horizontal scroll
-
-Modify the file `/themes/github.com/wowchemy/wowchemy-hugo-modules/wowchemy/assets/scss/custom.scss` to 
-```{r comment=''}
-cat(readLines(here::here("themes", "github.com", "wowchemy", "wowchemy-hugo-modules", "wowchemy", "assets", "scss", "custom.scss")), sep = '\n')
-```
 
 
 
