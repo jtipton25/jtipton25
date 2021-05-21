@@ -186,7 +186,7 @@ Thus, the variational density is
 \begin{align*}
 q^\star(\beta) &amp; \propto \exp \left( E_{q(\sigma^2), q(\mu)} \left( \log \left( p(\beta | \mathbf{y}, \mu, \sigma^2 ) \right) \right) \right) \\
 &amp; \propto \exp \left(  E_{q(\sigma^2), q(\mu)} \left( -\frac{1}{2} a \left( \beta - a^{-1} b \right)^2 \right) \right)  \\
-&amp; = \exp \left(  - \frac{1}{2} E_{q(\sigma^2)} \left( \frac{1}{\sigma^2} \right) \left( \sum_{i=1}^n x_i^2 + \frac{1}{\sigma^2_\beta} \right)  \left( \beta - \frac{\sum_{i=1}^n x_i \left( y_i - E_{q(\mu)} \left(\mu \right) \right) + \frac{\mu_\beta}{\sigma^2_\beta}}{ \sum_{i=1}^n x_i^2 + \frac{1}{\sigma^2_\beta}} \right)^2  \right) \\
+&amp; = \exp \left(  - \frac{1}{2} E_{q(\sigma^2)} \left( \frac{1}{\sigma^2} \right) \left( \sum_{i=1}^n x_i^2 + \frac{1}{\sigma^2_\beta} \right)  E_{q(\mu)} \left( \left( \beta - \frac{\sum_{i=1}^n x_i \left( y_i - \mu \right) + \frac{\mu_\beta}{\sigma^2_\beta}}{ \sum_{i=1}^n x_i^2 + \frac{1}{\sigma^2_\beta}} \right)^2 \right) \right) \\
 \end{align*}
 \]</span>
 which is proportional to a Gaussian distribution with mean
