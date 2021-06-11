@@ -18,6 +18,15 @@ projects: []
 draft: true
 ---
 
+Potential resources
+
+- [A Brief Primer on Variational Inference](https://fabiandablander.com/r/Variational-Inference.html#fn:1)
+- [Variational Bayesian Linear Regerssion](https://rpubs.com/cakapourani/variational-bayes-lr)
+- [Variational Bayesian Inference](https://en.wikipedia.org/wiki/Variational_Bayesian_methods)
+- [Expectation Propogation](https://en.wikipedia.org/wiki/Expectation_propagation)
+- [Variational Mixture of Gaussians](https://rpubs.com/cakapourani/variational_bayes_gmm)
+- [Variational Gaussian processes](https://towardsdatascience.com/variational-gaussian-process-what-to-do-when-things-are-not-gaussian-41197039f3d4)
+- []()
 
 
 The goal of variational inference is to replace the computationally expensive task of full Bayesian inference using Markov Chain Monte Carlo (MCMC) with a less computationally expensive optimization of an approximate distribution.
@@ -43,12 +52,17 @@ In general, calculating (or sampling from) the posterior distribution can be com
 It can be computationally challenging to sample from the posterior $p(\mathbf{y} | \boldsymbol{\theta})$ directly. Instead, we can find a distribution $q^\star(\boldsymbol{\theta})$ that is chosen from a family of densities $\mathcal{Q}$ where $q^\star(\boldsymbol{\theta})$ is the distribution in $\mathcal{Q}$ that best approximates the posterior distribution $p(\mathbf{y} | \boldsymbol{\theta})$ according to the Kullback-Leibler divergence
 $$
 \begin{align*}
-q^\star(\boldsymbol{\theta}) & = \stackrel{\argmin}{q(\boldsymbol{\theta}) \in \mathcal{Q}} KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})) \\
-& =  \int q(\boldsymbol{\theta}) \log \left( \frac{q(\boldsymbol{\theta})}{p(\mathbf{y} | \boldsymbol{\theta})} \right) d \boldsymbol{\theta} \\
-& = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( \frac{q(\boldsymbol{\theta})}{p(\mathbf{y} | \boldsymbol{\theta})} \right),
+q^\star(\boldsymbol{\theta}) & = \underset{q(\boldsymbol{\theta}) \in \mathcal{Q}}{arg\,min}\, KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})),
 \end{align*}
 $$
-where the Kullback-Leibler divergence measures the asymmetric difference between the densities $q(\boldsymbol{\theta})$ and $p(\boldsymbol{\theta} | \mathbf{y})$ (Note: $KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})) \neq KL(p(\mathbf{y} | \boldsymbol{\theta})| q(\boldsymbol{\theta}))$).
+where the Kullback-Leibler divergence is
+$$
+\begin{align*}
+KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})) & =  \int q(\boldsymbol{\theta}) \log \left( \frac{q(\boldsymbol{\theta})}{p(\mathbf{y} | \boldsymbol{\theta})} \right) d \boldsymbol{\theta} \\
+& = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( \frac{q(\boldsymbol{\theta})}{p(\mathbf{y} | \boldsymbol{\theta})} \right).
+\end{align*}
+$$
+The Kullback-Leibler (KL) divergence measures the asymmetric difference between the densities $q(\boldsymbol{\theta})$ and $p(\boldsymbol{\theta} | \mathbf{y})$ (Note: $KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})) \neq KL(p(\mathbf{y} | \boldsymbol{\theta})| q(\boldsymbol{\theta}))$ and therefore the KL divergence is not a metric).
 
 Notice that this representation does not solve the computational challenge as the marginal density of the data $p(\mathbf{y}) = \int p(\mathbf{y} | \boldsymbol{\theta}) p(\boldsymbol{\theta}) d \boldsymbol{\theta}$ requires a high-dimensional integral. 
 

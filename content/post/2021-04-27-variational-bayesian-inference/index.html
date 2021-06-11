@@ -20,6 +20,16 @@ draft: true
 
 
 
+<p>Potential resources</p>
+<ul>
+<li><a href="https://fabiandablander.com/r/Variational-Inference.html#fn:1">A Brief Primer on Variational Inference</a></li>
+<li><a href="https://rpubs.com/cakapourani/variational-bayes-lr">Variational Bayesian Linear Regerssion</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Variational_Bayesian_methods">Variational Bayesian Inference</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Expectation_propagation">Expectation Propogation</a></li>
+<li><a href="https://rpubs.com/cakapourani/variational_bayes_gmm">Variational Mixture of Gaussians</a></li>
+<li><a href="https://towardsdatascience.com/variational-gaussian-process-what-to-do-when-things-are-not-gaussian-41197039f3d4">Variational Gaussian processes</a></li>
+<li><a href=""></a></li>
+</ul>
 <p>The goal of variational inference is to replace the computationally expensive task of full Bayesian inference using Markov Chain Monte Carlo (MCMC) with a less computationally expensive optimization of an approximate distribution.</p>
 <p>Given a likelihood <span class="math inline">\(p(\mathbf{y} | \boldsymbol{\theta})\)</span> and prior <span class="math inline">\(p(\boldsymbol{\theta})\)</span>, the posterior distribution is</p>
 <p><span class="math display">\[\begin{align*}
@@ -31,12 +41,17 @@ p(\boldsymbol{\theta} | \mathbf{y}) = \frac{p(\mathbf{y} | \boldsymbol{\theta}) 
 <p>It can be computationally challenging to sample from the posterior <span class="math inline">\(p(\mathbf{y} | \boldsymbol{\theta})\)</span> directly. Instead, we can find a distribution <span class="math inline">\(q^\star(\boldsymbol{\theta})\)</span> that is chosen from a family of densities <span class="math inline">\(\mathcal{Q}\)</span> where <span class="math inline">\(q^\star(\boldsymbol{\theta})\)</span> is the distribution in <span class="math inline">\(\mathcal{Q}\)</span> that best approximates the posterior distribution <span class="math inline">\(p(\mathbf{y} | \boldsymbol{\theta})\)</span> according to the Kullback-Leibler divergence
 <span class="math display">\[
 \begin{align*}
-q^\star(\boldsymbol{\theta}) &amp; = \stackrel{\argmin}{q(\boldsymbol{\theta}) \in \mathcal{Q}} KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})) \\
-&amp; =  \int q(\boldsymbol{\theta}) \log \left( \frac{q(\boldsymbol{\theta})}{p(\mathbf{y} | \boldsymbol{\theta})} \right) d \boldsymbol{\theta} \\
-&amp; = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( \frac{q(\boldsymbol{\theta})}{p(\mathbf{y} | \boldsymbol{\theta})} \right),
+q^\star(\boldsymbol{\theta}) &amp; = \underset{q(\boldsymbol{\theta}) \in \mathcal{Q}}{arg\,min}\, KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})),
 \end{align*}
 \]</span>
-where the Kullback-Leibler divergence measures the asymmetric difference between the densities <span class="math inline">\(q(\boldsymbol{\theta})\)</span> and <span class="math inline">\(p(\boldsymbol{\theta} | \mathbf{y})\)</span> (Note: <span class="math inline">\(KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})) \neq KL(p(\mathbf{y} | \boldsymbol{\theta})| q(\boldsymbol{\theta}))\)</span>).</p>
+where the Kullback-Leibler divergence is
+<span class="math display">\[
+\begin{align*}
+KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})) &amp; =  \int q(\boldsymbol{\theta}) \log \left( \frac{q(\boldsymbol{\theta})}{p(\mathbf{y} | \boldsymbol{\theta})} \right) d \boldsymbol{\theta} \\
+&amp; = \operatorname{E}_{q(\boldsymbol{\theta})} \log \left( \frac{q(\boldsymbol{\theta})}{p(\mathbf{y} | \boldsymbol{\theta})} \right).
+\end{align*}
+\]</span>
+The Kullback-Leibler (KL) divergence measures the asymmetric difference between the densities <span class="math inline">\(q(\boldsymbol{\theta})\)</span> and <span class="math inline">\(p(\boldsymbol{\theta} | \mathbf{y})\)</span> (Note: <span class="math inline">\(KL(q(\boldsymbol{\theta}) | p(\mathbf{y} | \boldsymbol{\theta})) \neq KL(p(\mathbf{y} | \boldsymbol{\theta})| q(\boldsymbol{\theta}))\)</span> and therefore the KL divergence is not a metric).</p>
 <p>Notice that this representation does not solve the computational challenge as the marginal density of the data <span class="math inline">\(p(\mathbf{y}) = \int p(\mathbf{y} | \boldsymbol{\theta}) p(\boldsymbol{\theta}) d \boldsymbol{\theta}\)</span> requires a high-dimensional integral.</p>
 <p>Using the definition of conditional probability <span class="math inline">\(p(\boldsymbol{\theta} | \mathbf{y}) = \frac{p(\mathbf{y}, \boldsymbol{\theta})} {p(\mathbf{y})}\)</span>, the Kullback-Leibler divergence can be written as
 <span class="math display">\[
