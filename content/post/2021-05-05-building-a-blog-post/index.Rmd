@@ -1,5 +1,5 @@
 ---
-title: 'Building a blog post'
+title: 'Building a blog post with blogdown and gitHub Actions'
 author: 'John Tipton'
 date: '2021-05-05'
 slug: building-a-blog-post
@@ -62,7 +62,8 @@ hl <- function(x) {
 
 # Blogdown
 
-This tutorial will walk you through the steps 
+This tutorial will walk you through the steps of building your own blog using blogdown and gitHub actions. 
+
 
 
 
@@ -84,8 +85,9 @@ This tutorial will walk you through the steps
 
 # Getting equations to horizontal scroll
 
-Modify the file `/themes/github.com/wowchemy/wowchemy-hugo-modules/wowchemy/assets/scss/custom.scss` to 
-```{r comment=''}
+
+Displaying equations using blogdown and the Academic template by default does not wrap the equation. To allow the equation box to scroll horizontally, modify the file `/themes/github.com/wowchemy/wowchemy-hugo-modules/wowchemy/assets/scss/custom.scss` to 
+```{r comment='', echo = FALSE}
 cat(readLines(here::here("themes", "github.com", "wowchemy", "wowchemy-hugo-modules", "wowchemy", "assets", "scss", "custom.scss")), sep = '\n')
 ```
 
@@ -107,18 +109,16 @@ cat(readLines(here::here("themes", "github.com", "wowchemy", "wowchemy-hugo-modu
 
 # Setting up git with R and RStudio
 
-* Make sure the `blogdown` and `usethis` packages are installed on the server
+ These instructions follow those at [https://happygitwithr.com/](https://happygitwithr.com/) -- chapters 7, 9, and 11. Another example of setting up and installing git for R [How to use Git with R and RStudio](https://www.geo.uzh.ch/microsite/reproducible_research/post/rr-rstudio-git/)
+ 
+ Note that all of the following commands **assume you are working in a linux/macOS system (not Windows)**. First, make sure the `blogdown` and `usethis` packages are installed on your machine
 
-    ```r
-    install.packages("usethis")
-    install.packages("blogdown")
-    ```
+```r
+install.packages("usethis")
+install.packages("blogdown")
+```
 
-* These instructions follow those at [https://happygitwithr.com/](https://happygitwithr.com/) -- chapters 7, 9, and 11
-
-* Example of settingup and installing git for R [https://www.geo.uzh.ch/microsite/reproducible_research/post/rr-rstudio-git/][https://www.geo.uzh.ch/microsite/reproducible_research/post/rr-rstudio-git/]
-
-* In the terminal, type
+Next, open up a terminal window (either within RStudio or an independent window) and type
 
 ```
 git config --global user.name 'Jane Doe'
@@ -133,61 +133,49 @@ where the `user.name` 'Jane Doe' is your gitHub username and the `user.email` 'j
 
 # Setting up a gitHub SSH key
 
-* In the terminal, type
+The next step is setup an SSH key with gitHub that makes it easy to sync your local repository with gitHub (and avoid typing your username and password over and over). To do this, open the terminal window and type
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "USEFUL-COMMENT"
 ```
 
-where you can change the text in "USEFUL-COMMENT" to describe what the key is. I use "statistcal-methods-server" to distinguish this from my "home-desktop" and "work-desktop" computers.
+where you can change the text in "USEFUL-COMMENT" to describe what the key is. I use "statistical-methods-server" to distinguish this from my "home-desktop" and "work-desktop" computers.
 
-* Accept the proposal to save the key in the default location. Just press Enter here:
+At the prompt, accept the proposal to save the key in the default location. Just press `return` here:
 
 ```
-Enter file in which to save the key (/Users/jrtipton/.ssh/id_rsa):
+Enter file in which to save the key (~/.ssh/id_rsa):
 ```
 
-* Next, you have the option to enter a passphrase for extra security. For now, skip this but for future work that might be sensitive, an additional passphrase can be useful (and can be saved in a password manager)
 
+Next, you have the option to enter a passphrase for extra security. For now, skip this but for future work that might be sensitive, an additional passphrase can be useful (and can be saved in a password manager). To skip entering a passphrase, press `return` here. Once completed, the output should look something like:
 
-
-# Setting up a gitHub SSH key
-
-* The completed process should look something like:
-
-.small[
 ```
 jrtipton@statistical-methods ~ $ ssh-keygen -t rsa -b 4096 -C "statistical-methods-server"
 Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/jrtipton/.ssh/id_rsa):     
+Enter file in which to save the key (~/.ssh/id_rsa):     
 Enter passphrase (empty for no passphrase): 
 Enter same passphrase again: 
-Your identification has been saved in /Users/jrtipton/.ssh/id_rsa.
-Your public key has been saved in /Users/jrtipton/.ssh/id_rsa.pub.
+Your identification has been saved in ~/.ssh/id_rsa.
+Your public key has been saved in ~/.ssh/id_rsa.pub.
 The key fingerprint is:
-SHA256:ki0TNHm8qIvpH7/c0qQmdv2xxhYHCwlpn3+rVhKVeDo USEFUL-COMMENT
+SHA256:xh0TNYH+rHHwqQmdeDoki2xlpVhKm0n3vC87qIvp/cV USEFUL-COMMENT
 The key's randomart image is:
 +---[RSA 4096]----+
-|      o+   . .   |
 |     .=.o . +    |
+|      o+   . .   |
 |     ..= + +     |
 |      .+* E      |
-|     .= So =     |
-|    .  +. = +    |
 |   o.. = ..* .   |
+|    .  +. = +    |
 |  o ++=.o =o.    |
+|     .= So =     |
 | ..o.++o.=+.     |
 +----[SHA256]-----+
 ```
-]
 
 
-
-# Setting up a gitHub SSH key
-
-* Adding the ssh key to the agent
-
-* Make sure the ssh agent is running by typing in the terminal:
+Once you have generated the SSH key, the next step is to give the key to the ssh agent (which is a program that manages the key for you). Make sure the ssh agent is running by typing in the terminal:
 
 ```
 eval "$(ssh-agent -s)"
@@ -199,7 +187,7 @@ which should return something like:
 Agent pid 59566
 ```
 
-* Then, add your SSH key in the terminal using 
+Then, add your SSH key by typing in the terminal
 
 ```
 ssh-add ~/.ssh/id_rsa
@@ -207,8 +195,6 @@ ssh-add ~/.ssh/id_rsa
 
 
 
-
-# Setting up a gitHub SSH key
 
 * get out your SSH key using RStudio
 
@@ -226,8 +212,6 @@ cat ~/.ssh/id_rsa
 
 
 
-
-# Setting up a gitHub SSH key
 
 * Make sure you’re signed into GitHub. Click on your profile pic in upper right corner and go Settings, then SSH and GPG keys. Click "New SSH key". Paste your public key in the "Key" box. Give it an informative title, presumably related to the comment you used above, during key creation. For example, you might use statistical-methods. Click "Add SSH key".
 
