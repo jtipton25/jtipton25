@@ -18,11 +18,12 @@ projects: []
 draft: true
 ---
 
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
 
 
 <div id="blogdown" class="section level1">
 <h1>Blogdown</h1>
-<p>This tutorial will walk you through the steps</p>
+<p>This tutorial will walk you through the steps of building your own blog using blogdown and gitHub actions. By then end, you will have a site</p>
 <ul>
 <li>config</li>
 <li>gitHubPAT</li>
@@ -40,7 +41,7 @@ draft: true
 </div>
 <div id="getting-equations-to-horizontal-scroll" class="section level1">
 <h1>Getting equations to horizontal scroll</h1>
-<p>Modify the file <code>/themes/github.com/wowchemy/wowchemy-hugo-modules/wowchemy/assets/scss/custom.scss</code> to</p>
+<p>Displaying equations using blogdown and the Academic template by default does not wrap the equation. To allow the equation box to scroll horizontally, modify the file <code>/themes/github.com/wowchemy/wowchemy-hugo-modules/wowchemy/assets/scss/custom.scss</code> to</p>
 <pre><code>// Override this file to add your own SCSS styling.
 .MathJax {
   overflow-x: auto; /* Horizontally scroll long equations. */

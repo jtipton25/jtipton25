@@ -62,7 +62,7 @@ hl <- function(x) {
 
 # Blogdown
 
-This tutorial will walk you through the steps of building your own blog using blogdown and gitHub actions. 
+This tutorial will walk you through the steps of building your own blog using blogdown and gitHub actions. By then end, you will have a site
 
 
 
