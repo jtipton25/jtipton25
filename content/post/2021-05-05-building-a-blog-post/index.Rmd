@@ -83,13 +83,6 @@ This tutorial will walk you through the steps of building your own blog using bl
 
 
 
-# Getting equations to horizontal scroll
-
-
-Displaying equations using blogdown and the Academic template by default does not wrap the equation. To allow the equation box to scroll horizontally, modify the file `/themes/github.com/wowchemy/wowchemy-hugo-modules/wowchemy/assets/scss/custom.scss` to 
-```{r comment='', echo = FALSE}
-cat(readLines(here::here("themes", "github.com", "wowchemy", "wowchemy-hugo-modules", "wowchemy", "assets", "scss", "custom.scss")), sep = '\n')
-```
 
 
 
@@ -358,9 +351,6 @@ knitr::include_graphics("./01-gitHub.png")
 
 
 
-
-# Creating a repository on gitHub
-
 * click the Repositories tab
 
 ```{r, echo = FALSE, fig.align = "center", out.width = "50%"}
@@ -385,7 +375,6 @@ knitr::include_graphics("./03-gitHub.png")
 ```
 
 
-name: clone-repo
 # Cloning your gitHub repository
 
 Once you have setup your PAT and created a repository on gitHub, you can clone your created repository to the server. 
@@ -408,12 +397,9 @@ where the exact site will depend on your gitHub username and repository name.
 
 # Creating the project
 
-* Now that you have cloned the repository from gitHub, we will create a project. 
+* Now that you have cloned the repository from gitHub, we will create a project. Within RStudio, first makesure the `blogdown` library is installed (run `install.packages("blogdown")` if not). 
 
-
-* First, we make sure the `blogdown` library is installed (`install.packages("blogdown")`). 
-
-* Next we create a blog using
+Then, a blog is created using
 
 ```r
 blogdown::new_site(dir = "~/my-blog")
@@ -527,6 +513,172 @@ where `git@github.com:jtipton25/my-blog.git` is changed to what your SSH remote 
 
 
 # Building your blog with gitHub actions
+
+GitHub actions are a great way to use continuous integration tools to automatically build and host the website using gitHub pages. A nice benefit of using gitHub actions is that everything for your blog is contained within a single hosted environment. 
+
+The key to using gitHub actions is to setup a folder heirarchy. In the blogdown project folder, create a folder `.github` that has file named `.gitignore` that contains the text `*.html`. Also in the `.github` folder, create a folder named `workflows` that has a file named `deploy_blogdown.yml`. The file `deploy_blogdown.yml` is the file that tells the gitHub servers how to build your website. I'll go through the instructions from `deploy_blogdown.yml` in detail first, then post the full contents of `deploy_blogdown.yml` at the end of this section.
+
+The gitHub actions file `deploy_blogdown.yml` begins with
+
+```
+on:
+  push:
+     branches:
+       - master
+```
+which tells the server to run this action on any pushes to the master branch. As gitHub is moving from `master` to `main` as the default branch name, this might need to be modified to replace `master` with `main`.
+
+In the gitHub actions script `deploy_blogdown.yml`, there are two major jobs. The first job builds the blog from the source files (.Rmd and other files) and saves the output of the build as a gitHub artifact (saved output files). The second job takes the contents of the build artifact (output files) and pushes these to a gitHub pages branch of the github repository that hosts the blog through gitHub pages.
+
+Here we introducethe section that runs the job named `deployblog` which builds the site. 
+```
+name: deployblog
+
+jobs:
+  blogdown:
+    name: Render-Blog
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
+      - name: Install rmarkdown
+        run: Rscript -e 'install.packages(c("rmarkdown","blogdown"))'
+      - name: install hugo
+        run: Rscript -e 'blogdown::install_hugo("0.81.0")'
+      - name: Render blog
+        run: Rscript -e 'blogdown::build_site()'
+      - uses: actions/upload-artifact@v1
+        with:
+          name: public
+          path: public/
+          
+```
+The bit (`name:deployblog`) names the action. The section
+```
+jobs:
+  blogdown:
+    name: Render-Blog
+    runs-on: macOS-latest
+``` 
+creates a job with the `job_id` of `blogdown` and the job name `Render-Blog`. The `runs-on: macOS-latest` tells the server to create a macOS virtual machine for the job. One can also run jobs on a virtual Windows or Linux OS if desired.
+
+The next sections define the sequence of individual tasks within the job. The following sections have instructions for installing necessary software for the virtual machine, including `R`  and `pandoc` for knitting the blog.
+```
+    steps:
+      - uses: actions/checkout@v1
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
+```
+
+The next set of steps run the `R` code to install necessary `R` packages and then build the blog
+```
+      - name: Install rmarkdown
+        run: Rscript -e 'install.packages(c("rmarkdown","blogdown"))'
+      - name: install hugo
+        run: Rscript -e 'blogdown::install_hugo("0.81.0")'
+      - name: Render blog
+        run: Rscript -e 'blogdown::build_site()'
+```
+The final section of the first job uploads the results from the final build as an artifact (set of files) that will then be pushed to the gitHub pages branch of the repository
+```
+      - uses: actions/upload-artifact@v1
+        with:
+          name: public
+          path: public/
+```
+
+
+The second job in `deploy_blogdown.yml` takes the output of the built blog and pushes the build files to a gitHub pages branch. This section assumes that, prior to the first build using continuous integration, an empty gitHub pages branch `gh-pages` has been created. Instructions on how to do this step are in the blog at **link here**.
+
+
+
+
+```
+# Need to first create an empty gh-pages branch
+# see https://pkgdown.r-lib.org/reference/deploy_site_github.html
+# and also add secrets for a GH_PAT and EMAIL to the repository
+# gh-action from Cecilapp/GitHub-Pages-deploy
+  checkout-and-deploy:
+   runs-on: ubuntu-latest
+   needs: blogdown
+   steps:
+     - name: Checkout
+       uses: actions/checkout@master
+     - name: Download artifact
+       uses: actions/download-artifact@v1.0.0
+       with:
+         # Artifact name
+         name: public # optional
+         # Destination path
+         path: public # optional
+     - name: Deploy to GitHub Pages
+       uses: Cecilapp/GitHub-Pages-deploy@master
+       env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
+       with:
+          email: ${{ secrets.EMAIL }}               # must be a verified email
+          build_dir: public/                     # "_site/" by default
+```
+
+The full contents of `deploy_blogdown.yml` are below:
+
+
+```
+on:
+  push:
+     branches:
+       - master
+
+
+
+name: deployblog
+
+jobs:
+  blogdown:
+    name: Render-Blog
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
+      - name: Install rmarkdown
+        run: Rscript -e 'install.packages(c("rmarkdown","blogdown"))'
+      - name: install hugo
+        run: Rscript -e 'blogdown::install_hugo("0.81.0")'
+      - name: Render blog
+        run: Rscript -e 'blogdown::build_site()'
+      - uses: actions/upload-artifact@v1
+        with:
+          name: public
+          path: public/
+
+# Need to first create an empty gh-pages branch
+# see https://pkgdown.r-lib.org/reference/deploy_site_github.html
+# and also add secrets for a GH_PAT and EMAIL to the repository
+# gh-action from Cecilapp/GitHub-Pages-deploy
+  checkout-and-deploy:
+   runs-on: ubuntu-latest
+   needs: blogdown
+   steps:
+     - name: Checkout
+       uses: actions/checkout@master
+     - name: Download artifact
+       uses: actions/download-artifact@v1.0.0
+       with:
+         # Artifact name
+         name: public # optional
+         # Destination path
+         path: public # optional
+     - name: Deploy to GitHub Pages
+       uses: Cecilapp/GitHub-Pages-deploy@master
+       env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
+       with:
+          email: ${{ secrets.EMAIL }}               # must be a verified email
+          build_dir: public/                     # "_site/" by default
+```
+
 
 
 
@@ -1033,4 +1185,30 @@ Then commit and push. Verify that the website builds correctly on Netlify
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Getting equations to horizontal scroll
+
+
+Displaying equations using blogdown and the Academic template by default does not wrap the equation. To allow the equation box to scroll horizontally, modify the file `/themes/github.com/wowchemy/wowchemy-hugo-modules/wowchemy/assets/scss/custom.scss` to 
+```{r comment='', echo = FALSE}
+cat(readLines(here::here("themes", "github.com", "wowchemy", "wowchemy-hugo-modules", "wowchemy", "assets", "scss", "custom.scss")), sep = '\n')
+```
 
