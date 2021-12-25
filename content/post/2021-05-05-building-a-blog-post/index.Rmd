@@ -55,24 +55,29 @@ hl <- function(x) {
 ```
 
 
+# Getting started 
 
 
+First, we need to make sure you have setup an [RStudio project with gitHub](/jtipton25/post/setting-up-git-with-r-and-rstudio/). Once you have set this up, we can get started with creating the blog.
 
 
 
 # Blogdown
 
-This tutorial will walk you through the steps of building your own blog using blogdown and gitHub actions. By then end, you will have a site
+
+This tutorial will walk you through the steps of building your own blog using blogdown and gitHub actions. By then end, you will have a website and blog
+
+
+First, make sure the `blogdown` and `usethis` packages are installed on your machine
+
+```r
+install.packages("usethis")
+install.packages("blogdown")
+```
 
 
 
 
-
-
-
-- config
-- gitHubPAT
-- gitHub secrets
     
 # Choosing a theme
 
@@ -93,422 +98,7 @@ This tutorial will walk you through the steps of building your own blog using bl
 * Setting up a blog is easy using the `R` package blogdown
 
 
-* Create a [gitHub account](https://github.com/)
 
-    * gitHub will be your public code repository
-    
-    * gitHub will be an advertisement for your skills, knowledge, and abilities as a data scientist
-
-
-# Setting up git with R and RStudio
-
- These instructions follow those at [https://happygitwithr.com/](https://happygitwithr.com/) -- chapters 7, 9, and 11. Another example of setting up and installing git for R [How to use Git with R and RStudio](https://www.geo.uzh.ch/microsite/reproducible_research/post/rr-rstudio-git/)
- 
- Note that all of the following commands **assume you are working in a linux/macOS system (not Windows)**. First, make sure the `blogdown` and `usethis` packages are installed on your machine
-
-```r
-install.packages("usethis")
-install.packages("blogdown")
-```
-
-Next, open up a terminal window (either within RStudio or an independent window) and type
-
-```
-git config --global user.name 'Jane Doe'
-git config --global user.email 'jane@example.com'
-git config --global --list
-```
-
-where the `user.name` 'Jane Doe' is your gitHub username and the `user.email` 'jane@example.com' is your gitHub email.
-
-
-
-
-# Setting up a gitHub SSH key
-
-The next step is setup an SSH key with gitHub that makes it easy to sync your local repository with gitHub (and avoid typing your username and password over and over). To do this, open the terminal window and type
-
-```bash
-ssh-keygen -t rsa -b 4096 -C "USEFUL-COMMENT"
-```
-
-where you can change the text in "USEFUL-COMMENT" to describe what the key is. I use "statistical-methods-server" to distinguish this from my "home-desktop" and "work-desktop" computers.
-
-At the prompt, accept the proposal to save the key in the default location. Just press `return` here:
-
-```
-Enter file in which to save the key (~/.ssh/id_rsa):
-```
-
-
-Next, you have the option to enter a passphrase for extra security. For now, skip this but for future work that might be sensitive, an additional passphrase can be useful (and can be saved in a password manager). To skip entering a passphrase, press `return` here. Once completed, the output should look something like:
-
-```
-jrtipton@statistical-methods ~ $ ssh-keygen -t rsa -b 4096 -C "statistical-methods-server"
-Generating public/private rsa key pair.
-Enter file in which to save the key (~/.ssh/id_rsa):     
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
-Your identification has been saved in ~/.ssh/id_rsa.
-Your public key has been saved in ~/.ssh/id_rsa.pub.
-The key fingerprint is:
-SHA256:xh0TNYH+rHHwqQmdeDoki2xlpVhKm0n3vC87qIvp/cV USEFUL-COMMENT
-The key's randomart image is:
-+---[RSA 4096]----+
-|     .=.o . +    |
-|      o+   . .   |
-|     ..= + +     |
-|      .+* E      |
-|   o.. = ..* .   |
-|    .  +. = +    |
-|  o ++=.o =o.    |
-|     .= So =     |
-| ..o.++o.=+.     |
-+----[SHA256]-----+
-```
-
-
-Once you have generated the SSH key, the next step is to give the key to the ssh agent (which is a program that manages the key for you). Make sure the ssh agent is running by typing in the terminal:
-
-```
-eval "$(ssh-agent -s)"
-```
-
-which should return something like:
-
-```
-Agent pid 59566
-```
-
-Then, add your SSH key by typing in the terminal
-
-```
-ssh-add ~/.ssh/id_rsa
-```
-
-
-
-
-* get out your SSH key using RStudio
-
-* Go to Tools > Global Options…> Git/SVN. If your key pair has the usual name, id_rsa.pub and id_rsa, RStudio will see it and offer to “View public key”. Do that and accept the offer to copy to your clipboard. If your key pair is named differently, use another method.
-
-* Highlight and copy the text of the key making sure to copy the key starting with `ssh-rsa `    
-
-* If there is no "View public key" option, you can go to the terminal and type
-
-```bash
-cat ~/.ssh/id_rsa
-```
-
-* copy the **entire output** (starting with ssh-rsa to the end) to your clipboard (ctrl-c) or using your mouse (right click)
-
-
-
-
-* Make sure you’re signed into GitHub. Click on your profile pic in upper right corner and go Settings, then SSH and GPG keys. Click "New SSH key". Paste your public key in the "Key" box. Give it an informative title, presumably related to the comment you used above, during key creation. For example, you might use statistical-methods. Click "Add SSH key".
-
-In theory, we’re done! On the server you can type in the terminal 
-
-```
-ssh -T git@github.com
-```
-
-to test your connection to GitHub (answer **yes** to continue). If you’re not sure what to make of the output, see the link for details. Of course, the best test is to work through the realistic usage examples elsewhere in this guide.
-
-
-
-
-
-# Setting up your gitHub PAT
-
-To access your gitHub repository, you will need a personal access token (PAT) -- see [here](https://happygitwithr.com/github-pat.html) for details about how to set this up as this is what I based the following tutorial on. 
-
-* Log into the class server and install the `usethis` package
-
-```r
-install.packages("usethis")
-```
-
-
-
-# Setting up your gitHub PAT
-
-Once the `usethis` package is installed, type
-
-```r
-usethis::browse_github_pat()
-``` 
-
-to open a webpage using your gitHub account (you will likely need to enter your password to continue).
-
-
-```{r, echo = FALSE, fig.align = "center", out.width = "50%"}
-knitr::include_graphics("./05-1-gitHub-PAT.png")
-```
-
-
-This will open up a webpage.
-
-
-
-# Setting up your gitHub PAT
-
-On this webpage is a form to create your PAT with reasonable settings. Give the PAT a nickname and click "Generate token" and the token will be displayed. 
-
-```{r, echo = FALSE, fig.align = "center", out.width = "50%"}
-knitr::include_graphics("./06-gitHub-PAT.png")
-```
-
-
-
-# Setting up your gitHub PAT
-
-The token is a string of 40 random letters and digits. Make sure you **copy this token to your clipboard** as this is the last time you will be able to see it. You can copy by clicking on the clipboard symbol.
-
-
-```{r, echo = FALSE, fig.align = "center", out.width = "50%"}
-knitr::include_graphics("./07-gitHub-PAT.png")
-```
-
-
-
-# Setting up your gitHub PAT
-
-Once you have generated a gitHub PAT and copied it to your clipboard, we will add the PAT to your `.Renviron` file. The goal is to add the following line in your `.Renviron` file:
-
-```r
-GITHUB_PAT=XXXXX
-```
-
-where the XXXX is the PAT copied from github. The `.Renviron` file is a hidden file that lives in your home directory and contains variables for `R` to load on startup. 
-
-
-
-# Setting up your gitHub PAT
-
-The `.Renviron` file can be edited in `R` using the `usethis` package. In `R` type
-
-```r
-usethis::edit_r_environ()
-```
-
-```{r, echo = FALSE, fig.align = "center", out.width = "50%"}
-knitr::include_graphics("./08-gitHub-PAT.png")
-```
-
-Your .Renviron file should pop up in your editor. Add your GITHUB_PAT as above,
-
-```r
-GITHUB_PAT=XXX
-```
-
-where the `XXXX` is the PAT copied from the GitHub site with a line break at the end of the file save the `.Renviron` file and close it. If questioned, YES you do want to use a filename that begins with a dot `.`. Note that, by default, most dotfiles are hidden in the RStudio file browser, but `.Renviron` should always be visible.
-
-
-
-# Setting up your gitHub PAT
-
-Restart `R` (Session > Restart R in the RStudio menu bar), as environment variables are loaded from `.Renviron` only at the start of an `R` session.
-
-```{r, echo = FALSE, fig.align = "center", out.width = "50%"}
-knitr::include_graphics("./09-gitHub-PAT.png")
-```
-
-
-
-# Setting up your gitHub PAT
-
-Check that the PAT is now available like so:
-
-```r
-usethis::git_sitrep()
-```
-
-You should see the following line in the output:
-
-```
-Personal access token: '<found in env var>'
-```
-
-```{r, echo = FALSE, fig.align = "center", out.width = "50%"}
-knitr::include_graphics("./10-gitHub-PAT.png")
-```
-
-Now commands you run from the terminal and from RStudio, which consults GITHUB_PAT by default, will be able to access GitHub repositories which you have access to.
-
-
-
-
-# Creating a repository on gitHub
-
-* Go to your gitHub webpage
-
-
-```{r, echo = FALSE, fig.align = "center", out.width = "50%"}
-knitr::include_graphics("./01-gitHub.png")
-```
-
-
-
-* click the Repositories tab
-
-```{r, echo = FALSE, fig.align = "center", out.width = "50%"}
-knitr::include_graphics("./02-gitHub.png")
-```
-
-
-* click the green button to create a new repository
-
-
-
-# Creating a repository on gitHub
-
-* Give the repository a name
-
-* If you want, add a README to the repository
-
-* Click the green "create repository button"
-
-```{r, echo = FALSE, fig.align = "center", out.width = "70%"}
-knitr::include_graphics("./03-gitHub.png")
-```
-
-
-# Cloning your gitHub repository
-
-Once you have setup your PAT and created a repository on gitHub, you can clone your created repository to the server. 
-
-Open up the gitHub webpage for your repository and click on the green button that says XXX. Make sure you have the SSH tab highlighted and click on the clipboard symbol to copy the address into your clipboard. 
-
-```{r, echo = FALSE, out.width = "60%", fig.show = 'hold'}
-knitr::include_graphics("./server-project-ssh.png")
-```
-
-Open up the terminal and type 
-
-```
-git clone https://github.com/jtipton25/my-blog.git
-```
-
-where the exact site will depend on your gitHub username and repository name.
-
-
-
-# Creating the project
-
-* Now that you have cloned the repository from gitHub, we will create a project. Within RStudio, first makesure the `blogdown` library is installed (run `install.packages("blogdown")` if not). 
-
-Then, a blog is created using
-
-```r
-blogdown::new_site(dir = "~/my-blog")
-```
-
-where "~/my-blog" is the filepath for the repository you cloned from gitHub.
-
-* Congratulations! You have just created your first blog!
-
-
-
-
-# Pushing the blog to gitHub
-
-* open up the terminal and navigate to the directory your gitHub repository was cloned into
-
-```
-cd ~/my-blog
-```
-
-* check the status of the repository with 
-
-```
-git status
-```
-
-* My status at this point is:
-
-```
-On branch main
-Your branch is up-to-date with 'origin/main'.
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-        .gitignore
-        config.toml
-        content/
-        index.Rmd
-        my-blog.Rproj
-        static/
-        themes/
-
-nothing added to commit but untracked files present (use "git add" to track)
-```
-
-
-
-# Pushing the blog to gitHub
-
-* Add all the files with 
-
-
-```
-git add .
-```
-
-* Commit all of the files (`-a`) with a message (`-m` to gitHub with
-
-```
-git commit -a -m 'first blog post'
-```
-
-* Push the files to the origin master branch with 
-
-```
-git push 
-```
-
-
-
-
-# Git push error (Troubleshooting)
-
-* See [https://happygitwithr.com/ssh-keys.html#ssh-troubleshooting](https://happygitwithr.com/ssh-keys.html#ssh-troubleshooting) and [https://docs.github.com/en/free-pro-team@latest/github/using-git/changing-a-remotes-url](https://docs.github.com/en/free-pro-team@latest/github/using-git/changing-a-remotes-url)
-
-If you get an error in the git push like this:
-
-```
-error: cannot run rpostback-askpass: No such file or directory
-Username for 'https://github.com': 
-```
-
-type `ctrl-c` to exit and check the remote using the terminal with
-
-```
-git remote -v
-```
-
-* There are two types of remotes (HTTPS and SSH), we want a SSH remote.
-    * HTTPS remotes: `https://github.com/USERNAME/REPOSITORY.git`
-    * SSH remotes: `git@github.com:USERNAME/REPOSITORY.git`
-
-
-
-# Git push error (Troubleshooting)
-
-* If your remote is an HTTPS remote, change it to a SSH remote by going to the gitHub webpage and copying the SSH address (see [Cloning your gitHub repository](#clone-repo))
-
-```{r, echo = FALSE, out.width = "60%", fig.show = 'hold'}
-knitr::include_graphics("./server-project-ssh.png")
-```
-
-Then, change the remote URL to SSH using 
-
-```
-git remote set-url origin git@github.com:jtipton25/my-blog.git
-```
-
-where `git@github.com:jtipton25/my-blog.git` is changed to what your SSH remote is.
 
 
 
@@ -530,7 +120,7 @@ which tells the server to run this action on any pushes to the master branch. As
 
 In the gitHub actions script `deploy_blogdown.yml`, there are two major jobs. The first job builds the blog from the source files (.Rmd and other files) and saves the output of the build as a gitHub artifact (saved output files). The second job takes the contents of the build artifact (output files) and pushes these to a gitHub pages branch of the github repository that hosts the blog through gitHub pages.
 
-Here we introducethe section that runs the job named `deployblog` which builds the site. 
+Here we introduce the section that runs the job named `deployblog` which builds the site. 
 ```
 name: deployblog
 
@@ -694,8 +284,8 @@ jobs:
 <!-- * Create a new site from git (green button in left figure) -->
 
 <!-- ```{r, echo = FALSE, out.width = "50%", fig.show = 'hold', fig.align = "default"} -->
-<!-- knitr::include_graphics("./netlify-1.png") -->
-<!-- knitr::include_graphics("./netlify-2.png") -->
+<!-- knitr::include_graphics("./images/netlify-1.png") -->
+<!-- knitr::include_graphics("./images/netlify-2.png") -->
 <!-- ``` -->
 
 <!-- * Then choose to link to your gitHub account (gitHub button in right figure) -->
@@ -709,8 +299,8 @@ jobs:
 <!-- * If you can't find your repository, click the configure repository button (right figure) -->
 
 <!-- ```{r, echo = FALSE, out.width = "50%", fig.show = 'hold', fig.align = "default"} -->
-<!-- knitr::include_graphics("./netlify-3.png") -->
-<!-- knitr::include_graphics("./netlify-4.png") -->
+<!-- knitr::include_graphics("./images/netlify-3.png") -->
+<!-- knitr::include_graphics("./images/netlify-4.png") -->
 <!-- ``` -->
 
 
@@ -720,13 +310,13 @@ jobs:
 <!-- * If you have multiple gitHub accounts/teams, you have to choose your correct gitHub account -->
 
 <!-- ```{r, echo = FALSE, out.width = "30%", fig.show = 'hold', fig.align = "center"} -->
-<!-- knitr::include_graphics("./netlify-5.png") -->
+<!-- knitr::include_graphics("./images/netlify-5.png") -->
 <!-- ``` -->
 
 <!-- * I have chosen to only link certain repositories with Netlify. If you choose this option, click on the button to choose those repositories. Otherwise, you can share all your repositories with Netlify -->
 
 <!-- ```{r, echo = FALSE, out.width = "70%", fig.show = 'hold', fig.align = "center"} -->
-<!-- knitr::include_graphics("./netlify-6.png") -->
+<!-- knitr::include_graphics("./images/netlify-6.png") -->
 <!-- ``` -->
 
 
@@ -737,8 +327,8 @@ jobs:
 <!-- * If choosing to share only specific repositories, choose those repositories here. Make sure you choose the blog repository we just created. -->
 
 <!-- ```{r, echo = FALSE, out.width = "50%", fig.show = 'hold', fig.align = "default"} -->
-<!-- knitr::include_graphics("./netlify-7.png") -->
-<!-- knitr::include_graphics("./netlify-8.png") -->
+<!-- knitr::include_graphics("./images/netlify-7.png") -->
+<!-- knitr::include_graphics("./images/netlify-8.png") -->
 <!-- ``` -->
 
 
@@ -748,8 +338,8 @@ jobs:
 <!-- * Once you have chosen your linked repositories, you can choose on Netlify which repositories to build into a website (left figure). Once you have chosen the website you want to build, you can deploy the site (right figure) -->
 
 <!-- ```{r, echo = FALSE, out.width = "50%", fig.show = 'hold', fig.align = "default"} -->
-<!-- knitr::include_graphics("./netlify-9.png") -->
-<!-- knitr::include_graphics("./netlify-10.png") -->
+<!-- knitr::include_graphics("./images/netlify-9.png") -->
+<!-- knitr::include_graphics("./images/netlify-10.png") -->
 <!-- ``` -->
 
 
@@ -760,8 +350,8 @@ jobs:
 <!-- * This will take you to your deployed site (left). Once the site has built, you can view the site link using the link at the top (right) -->
 
 <!-- ```{r, echo = FALSE, out.width = "50%", fig.show = 'hold', fig.align = "default"} -->
-<!-- knitr::include_graphics("./netlify-11.png") -->
-<!-- knitr::include_graphics("./netlify-12.png") -->
+<!-- knitr::include_graphics("./images/netlify-11.png") -->
+<!-- knitr::include_graphics("./images/netlify-12.png") -->
 <!-- ``` -->
 
 
@@ -772,14 +362,14 @@ jobs:
 <!-- * To change the blog address, we can edit the domain. Click on the Domain settings button (left). Then click the options button and edit site name.  -->
 
 <!-- ```{r, echo = FALSE, out.width = "50%", fig.show = 'hold', fig.align = "default"} -->
-<!-- knitr::include_graphics("./netlify-13.png") -->
-<!-- knitr::include_graphics("./netlify-14.png") -->
+<!-- knitr::include_graphics("./images/netlify-13.png") -->
+<!-- knitr::include_graphics("./images/netlify-14.png") -->
 <!-- ``` -->
 
 <!-- * Change the site name to something that you prefer -->
 
 <!-- ```{r, echo = FALSE, out.width = "50%", fig.show = 'hold', fig.align = "center"} -->
-<!-- knitr::include_graphics("./netlify-15.png") -->
+<!-- knitr::include_graphics("./images/netlify-15.png") -->
 <!-- ``` -->
 
 <!-- * The blog for this walkthrough is at [https://dasc-1104-blog.netlify.app/](https://dasc-1104-blog.netlify.app/) -->
@@ -795,7 +385,7 @@ jobs:
     * 
     
 ```{r, echo = FALSE, out.width = "50%", fig.show = 'hold', fig.align = "center"}
-knitr::include_graphics("./project-1.png")
+knitr::include_graphics("./images/project-1.png")
 ```
 
 
@@ -805,8 +395,8 @@ knitr::include_graphics("./project-1.png")
 * Choose an existing directory (left) and click browse to find the cloned repository (right)
 
 ```{r, echo = FALSE, out.width = "50%", fig.show = 'hold', fig.align = "default"}
-knitr::include_graphics("./project-2.png")
-knitr::include_graphics("./project-3.png")
+knitr::include_graphics("./images/project-2.png")
+knitr::include_graphics("./images/project-3.png")
 ```
 
 
@@ -817,8 +407,8 @@ knitr::include_graphics("./project-3.png")
 * Choose the cloned repository folder (left) and create the project in this repository (right)
 
 ```{r, echo = FALSE, out.width = "50%", fig.show = 'hold', fig.align = "default"}
-knitr::include_graphics("./project-4.png")
-knitr::include_graphics("./project-5.png")
+knitr::include_graphics("./images/project-4.png")
+knitr::include_graphics("./images/project-5.png")
 ```
 
 
@@ -828,7 +418,7 @@ knitr::include_graphics("./project-5.png")
 * RStudio should then start a new session with your blog project loaded
 
 ```{r, echo = FALSE, out.width = "70%", fig.show = 'hold', fig.align = "center"}
-knitr::include_graphics("./project-6.png")
+knitr::include_graphics("./images/project-6.png")
 ```
 
 
@@ -956,7 +546,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
 * If you get the error shown below when knitting a `.Rmd` to `.pdf`, you don't have `tinytex` installed. 
 
 ```{r, echo = FALSE, out.width = "70%", fig.show = 'hold', fig.align = "center"}
-knitr::include_graphics("./tinytex-not-installed.png")
+knitr::include_graphics("./images/tinytex-not-installed.png")
 ```
 
 Run the following to resolve this issue
@@ -973,13 +563,13 @@ tinytex::install_tinytex()
 If you get the error shown below when knitting a `.Rmd` to `.pdf`, you have a unicode character in your `.Rmd`
 
 ```{r, echo = FALSE, out.width = "30%", fig.show = 'hold', fig.align = "center"}
-knitr::include_graphics("./unicode-error.png")
+knitr::include_graphics("./images/unicode-error.png")
 ```
 
 To find the unicode character(s), open the find bar using `ctrl-f` (`cmd-f` on Mac) or using the menu bar: `edit -> find`. Make sure the `Regex` box is checked and search for `[^\x00-\x7F]`
 
 ```{r, echo = FALSE, out.width = "65%", fig.show = 'hold', fig.align = "center"}
-knitr::include_graphics("./unicode-find.png")
+knitr::include_graphics("./images/unicode-find.png")
 ```
 
 Find the unicode character and delete it for the `.Rmd` document to compile
@@ -1075,7 +665,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
 * If you add data for analysis (`.csv` files), the Netfliy build might fail, pointing to a `.csv` file
 
 ```{r, echo = FALSE, out.width = "100%", fig.show = 'hold', fig.align = "center"}
-knitr::include_graphics("./netlify-tidytuesday.png")
+knitr::include_graphics("./images/netlify-tidytuesday.png")
 ```
 
 
@@ -1104,7 +694,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
 * If you moved data from tidytuesday into your blog repository, the netlify build might fail with the following error message.
 
 ```{r, echo = FALSE, out.width = "100%", fig.show = 'hold', fig.align = "center"}
-knitr::include_graphics("./netlify-tidytuesday.png")
+knitr::include_graphics("./images/netlify-tidytuesday.png")
 ```
 
 * If you added the tidytuesday repository analysis you need to tell `blogdown` to ignore the `.csv` files. To do this, open the `config.toml` file and modify the line:
@@ -1127,7 +717,7 @@ ignoreFiles = [..., "\\.csv$", "tidytuesday"]
 * The following error referencing gitmodules is caused by there being multiple `/.git/` respositories in your root blog directory (typically caused by pulling data from tidytuesday)
 
 ```{r, echo = FALSE, out.width = "100%", fig.show = 'hold', fig.align = "center"}
-knitr::include_graphics("./netlify-gitmodules.png")
+knitr::include_graphics("./images/netlify-gitmodules.png")
 ```
 
 * First, identify where the offending `/.git/` directory is by navigating to the root project directory in the terminal then typing
