@@ -174,6 +174,8 @@ to test your connection to GitHub (answer **yes** to continue). If you’re not 
 
 # Setting up your gitHub PAT
 
+**NOTE: This workflow might have changed because gitHub has modified their rules for PATs since writing.**
+
 To access your gitHub repository, you will need a personal access token (PAT) -- see [here](https://happygitwithr.com/github-pat.html) for details about how to set this up as this is what I based the following tutorial on. 
 
 * Log into the class server and install the `usethis` package

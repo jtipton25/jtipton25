@@ -3,31 +3,31 @@
 
 title: "Estimation of Sediment Mixing Distributions with Uncertainty Quantification using Bayesian Nonparametric Modeling"
 authors: [admin, Glenn Sharman, Sam Johnstone]
-date: 2022-12-23T22:41:07-05:00
-doi: ""
+date: 2021-07-08T22:41:07-05:00
+doi: "https://doi.org/10.1007/s11004-021-09961-x"
 
 # Schedule page publish date (NOT publication's date).
-publishDate: 2022-12-23T22:41:07-05:00
+publishDate: 2021-07-08T22:41:07-05:00
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article; 
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
 # 7 = Thesis; 8 = Patent
 publication_types:
-- "3"
+- "2"
 
 # Publication name and optional abbreviated publication name.
-publication: ""
+publication: "Mathematical Geosciences"
 publication_short: ""
 
-abstract: ""
+abstract: "Sedimentary deposits constitute the primary record of changing environmental conditions that have acted on Earth’s surface over geologic time. Clastic material is eroded from source locations (parents) in sediment routing systems and deposited at sink locations (children). Both parents and children have characteristics that vary across many different dimensions, including grain size, chemical composition, and the geochronologic age of constituent detrital minerals. During transport, sediment from different parents is mixed together to form a child, which in turn may serve as the parent for other sediment farther down-system or later in time when buried sediment is exhumed. The distribution of detrital mineral ages observed in parent and child sediments allows for investigation of the proportion of each parent in the child sediment, which reflects the properties of the sediment routing system. To model the proportion of dates in a child sample that comes from each of the parent distributions, we use a Bayesian mixture of Dirichlet processes. This model enables us to estimate the mixing proportions with associated uncertainty while making minimal assumptions. We also present an extension to the model whereby we reconstruct unobserved parent distributions from multiple observed child distributions using mixtures of Dirichlet processes. The model accounts for uncertainty in both the number of mineral formation events that constitute each parent distribution and the mixing proportions of each parent distribution that constitutes a child distribution. To demonstrate the model, we perform analyses using simulated data where the true age distribution is known as well as using a real-world case study from the coast of central California, USA."
 
 # Summary. An optional shortened abstract.
 summary: ""
 
 tags: []
 categories: []
-featured: false
+featured: true
 
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
