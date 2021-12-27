@@ -20,6 +20,30 @@
     <loc>jtipton25/event/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
+    <loc>jtipton25/publication-type/2/</loc>
+    <lastmod>2021-07-08T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/authors/</loc>
+    <lastmod>2021-07-08T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/publication/2021mathgeo/</loc>
+    <lastmod>2021-07-08T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/glenn-sharman/</loc>
+    <lastmod>2021-07-08T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/john-tipton/</loc>
+    <lastmod>2021-07-08T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/publication_types/</loc>
+    <lastmod>2021-07-08T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/publication/</loc>
+    <lastmod>2021-07-08T22:41:07-05:00</lastmod>
+  </url><url>
+    <loc>jtipton25/author/sam-johnstone/</loc>
+    <lastmod>2021-07-08T22:41:07-05:00</lastmod>
+  </url><url>
     <loc>jtipton25/courses/</loc>
     <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url><url>
@@ -29,16 +53,10 @@
     <loc>jtipton25/tag/academic/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/authors/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>jtipton25/categories/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>jtipton25/category/demo/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>jtipton25/author/john-tipton/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>jtipton25/post/</loc>
@@ -47,7 +65,7 @@
     <loc>jtipton25/tags/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/post/getting-started/</loc>
+    <loc>jtipton25/post/welcome-to-wowchemy-the-website-builder-for-hugo/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>jtipton25/author/%E5%90%B3%E6%81%A9%E9%81%94/</loc>
@@ -59,7 +77,7 @@
     <loc>jtipton25/category/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>jtipton25/post/2020-12-01-r-rmarkdown/</loc>
+    <loc>jtipton25/post/hello-r-markdown/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
     <loc>jtipton25/tag/plot/</loc>
@@ -74,22 +92,13 @@
     <loc>jtipton25/tag/regression/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>jtipton25/publication-type/2/</loc>
-    <lastmod>2020-11-23T22:41:07-05:00</lastmod>
-  </url><url>
     <loc>jtipton25/author/manuel-chevalier-et.-al/</loc>
     <lastmod>2020-11-23T22:41:07-05:00</lastmod>
   </url><url>
     <loc>jtipton25/publication/2020earthscience/</loc>
     <lastmod>2020-11-23T22:41:07-05:00</lastmod>
   </url><url>
-    <loc>jtipton25/publication_types/</loc>
-    <lastmod>2020-11-23T22:41:07-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/publication/</loc>
-    <lastmod>2020-11-23T22:41:07-05:00</lastmod>
-  </url><url>
-    <loc>jtipton25/post/writing-technical-content/</loc>
+    <loc>jtipton25/post/writing-technical-content-in-academic/</loc>
     <lastmod>2019-07-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>jtipton25/publication/2019holocene/</loc>
@@ -143,7 +152,7 @@
     <loc>jtipton25/author/trevor-j.-hefley/</loc>
     <lastmod>2019-03-23T22:41:07-05:00</lastmod>
   </url><url>
-    <loc>jtipton25/post/jupyter/</loc>
+    <loc>jtipton25/post/display-jupyter-notebooks-with-academic/</loc>
     <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>jtipton25/slides/</loc>

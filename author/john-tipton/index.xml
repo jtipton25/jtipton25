@@ -5,7 +5,7 @@
     <link>jtipton25/author/john-tipton/</link>
       <atom:link href="jtipton25/author/john-tipton/index.xml" rel="self" type="application/rss+xml" />
     <description>John Tipton</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 08 Jul 2021 22:41:07 -0500</lastBuildDate>
     <image>
       <url>/jtipton25/author/john-tipton/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_270x270_fill_q75_lanczos_center.jpg</url>
       <title>John Tipton</title>
@@ -13,10 +13,18 @@
     </image>
     
     <item>
+      <title>Estimation of Sediment Mixing Distributions with Uncertainty Quantification using Bayesian Nonparametric Modeling</title>
+      <link>jtipton25/publication/2021mathgeo/</link>
+      <pubDate>Thu, 08 Jul 2021 22:41:07 -0500</pubDate>
+      <guid>jtipton25/publication/2021mathgeo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Welcome to Wowchemy, the website builder for Hugo</title>
-      <link>jtipton25/post/getting-started/</link>
+      <link>jtipton25/post/welcome-to-wowchemy-the-website-builder-for-hugo/</link>
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>jtipton25/post/getting-started/</guid>
+      <guid>jtipton25/post/welcome-to-wowchemy-the-website-builder-for-hugo/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site&lt;/li&gt;
@@ -107,9 +115,9 @@
     
     <item>
       <title>Display Jupyter Notebooks with Academic</title>
-      <link>jtipton25/post/jupyter/</link>
+      <link>jtipton25/post/display-jupyter-notebooks-with-academic/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>jtipton25/post/jupyter/</guid>
+      <guid>jtipton25/post/display-jupyter-notebooks-with-academic/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
 Image(&#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&#39;)
 &lt;/code&gt;&lt;/pre&gt;
