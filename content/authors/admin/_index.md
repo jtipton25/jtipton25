@@ -49,4 +49,4 @@ John Tipton is an assistant professor of Statistics in the Mathematical Sciences
 He is doing what he can and making things up along the way.
 
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "https://drive.google.com/file/d/1FKNdKrmOoza0H4lsRmCwa3pL_oLYFSGR/view?usp=sharing" "newtab" >}}CV{{< /staticref >}}.
+{{< staticref "https://drive.google.com/file/d/1C8QC5lhNzDgVq_1dUyxEM60KohxoFHi9/view?usp=sharing" "newtab" >}} {{< icon name="download" pack="fas" >}} Download my CV{{< /staticref >}}.
