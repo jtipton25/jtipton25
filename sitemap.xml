@@ -8,8 +8,22 @@
     <loc>jtipton25/courses/example/visualization/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>jtipton25/home-draft/projects/</loc>
+  </url><url>
+    <loc>jtipton25/home-draft/skills/</loc>
+  </url><url>
     <loc>jtipton25/courses/example/stats/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>jtipton25/home-draft/experience/</loc>
+  </url><url>
+    <loc>jtipton25/home-draft/accomplishments/</loc>
+  </url><url>
+    <loc>jtipton25/home-draft/talks/</loc>
+  </url><url>
+    <loc>jtipton25/home-draft/tags/</loc>
+  </url><url>
+    <loc>jtipton25/home-draft/contact/</loc>
   </url><url>
     <loc>jtipton25/talk/example-talk/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
@@ -353,6 +367,8 @@
     <loc>jtipton25/admin/</loc>
   </url><url>
     <loc>jtipton25/students/</loc>
+  </url><url>
+    <loc>jtipton25/home-draft/</loc>
   </url><url>
     <loc>jtipton25/post/</loc>
   </url>
