@@ -11,7 +11,7 @@ education:
   # - course: BS in Mathematics and Zoology
   #   institution: Colorado State University
   #   year: 2005
-email: ""
+email: "jrtipton@uark.edu"
 highlight_name: false
 interests:
 - Applied Statistics

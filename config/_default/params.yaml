@@ -18,9 +18,9 @@ org_name: ''
 description: ''
 # twitter: ''
 
-# Contact (edit or remove options as required)
+Contact (edit or remove options as required)
 
-# email: test@example.org
+email: jrtipton@uark.edu
 # phone: 888 888 88 88
 # address:
 #   street: 850 W Dickson St
@@ -37,7 +37,7 @@ description: ''
 #   - 'Monday 10:00 to 13:00'
 #   - 'Wednesday 09:00 to 10:00'
 # appointment_url: 'https://calendly.com'
-contact_links:
+# contact_links:
   # - icon: twitter
   #   icon_pack: fab
   #   name: DM Me
@@ -54,7 +54,7 @@ contact_links:
   #   icon_pack: fas
   #   name: Discuss on Forum
   #   link: 'https://discourse.gohugo.io'
-
+x
 # Site header
 
 main_menu:
@@ -115,10 +115,10 @@ avatar:
 publications:
   date_format: January 2006
   citation_style: apa
-projects:
-  post_view: 2
-  publication_view: 2
-  talk_view: 2
+#projects:
+#  post_view: 2
+#  publication_view: 2
+#  talk_view: 2
 breadcrumb:
   page_types:
     book: true
