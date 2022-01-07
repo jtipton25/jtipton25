@@ -38,9 +38,9 @@
     
     <item>
       <title>Display Jupyter Notebooks with Academic</title>
-      <link>jtipton25/drafts/jupyter/</link>
+      <link>jtipton25/post-draft/jupyter/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>jtipton25/drafts/jupyter/</guid>
+      <guid>jtipton25/post-draft/jupyter/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
 Image(&#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&#39;)
 &lt;/code&gt;&lt;/pre&gt;
